@@ -30,5 +30,5 @@ public interface CourRepository extends JpaRepository<Cour, Long> {
 	 * libelle,@Param("typeCour") TypeCour typeCour);
 	 */
 	
-	//La liste des cours et des enseignants pour un groupe/
+	//La liste des cours et des enseignants pour un groupe//
 }
