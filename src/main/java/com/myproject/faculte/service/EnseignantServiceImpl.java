@@ -68,4 +68,12 @@ public class EnseignantServiceImpl implements EnseignantService {
 		return enseignantRepository.findByEnseignantStatut(statut);
 	}
 
+	@Override
+	public List<Enseignant> findByGroupesId(Long id) {
+		
+		return enseignantRepository.findByGroupesId(id);
+	}
+
+	
+
 }

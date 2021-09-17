@@ -24,5 +24,5 @@ public interface GroupeService {
 	
 	
 	List<Groupe> findByFormationId(Long id);
-
+	List<Groupe> findByEnseignantsId(Long id);
 }

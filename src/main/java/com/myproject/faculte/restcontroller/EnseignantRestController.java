@@ -110,11 +110,10 @@ public class EnseignantRestController {
 		return enseignantService.findByEnseignantStatut(statut);
 	}
 	
-	/*
-	 * @RequestMapping(value = "/EnseignantsCours/{cours}",method =
-	 * RequestMethod.GET) public List<Enseignant>
-	 * findByEnseignantStatut(@PathVariable("statut") String statut) { return
-	 * enseignantService.findByEnseignantStatut(statut); }
-	 */
+	 @ApiOperation(value="Affiche la liste des  Enseignants  pour un groupe selon son id")
+		@RequestMapping(value = "/Enseignants/Groupe/{id}",method = RequestMethod.GET)
+		public List<Enseignant> findByGroupesId(@PathVariable("id") Long id) {
+			return enseignantService.findByGroupesId(id);
+		}
 
 }

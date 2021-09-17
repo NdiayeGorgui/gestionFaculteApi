@@ -89,7 +89,7 @@ class FaculteApplicationTests {
 		System.out.println(e.getFirstName()+" "+e.getLastName()+" "+e.getStatut());
 	}
 	}
-	
+	// test pour trouver la liste des enseignants selon le statut
 	@Test public void testfindByEnseignantStatut()
 	{
 	List<Enseignant> ens = enseignantRepository.findByEnseignantStatut("vacataire");
@@ -99,7 +99,7 @@ class FaculteApplicationTests {
 	}
 	}
 	
-	//trouver la liste des cours d'un enseignant donné
+	// test pour trouver la liste des cours d'un enseignant donné
 	@Test
 	public void testfindByEnseignantCours()
 	{
@@ -124,7 +124,7 @@ class FaculteApplicationTests {
 		}
 	}
 	
-	//trouver la liste des groupes d'une formation selon l'id de la formation donné
+	//test pour trouver la liste des groupes d'une formation selon l'id de la formation donné
 		@Test
 		public void testfindByFormationId()
 		{
@@ -135,5 +135,23 @@ class FaculteApplicationTests {
 		System.out.println(g.getId());
 		}
 		}
-	
+		
+		//test pour  trouver la liste des Enseignants pour un groupe
+		@Test public void testfindByGroupesId()
+		{
+		List<Enseignant> ens = enseignantRepository.findByGroupesId(2L);
+		for (Enseignant e : ens)
+		{
+			System.out.println(e.getFirstName());
+		}
+		}
+		//test pour trouver la liste des groupes pour un enseignant
+		@Test public void testfindByEnseignantsId()
+		{
+		List<Groupe> grps = groupeRepository.findByEnseignantsId(2L);
+		for (Groupe g : grps)
+		{
+			System.out.println(g.getId());
+		}
+		}
 }

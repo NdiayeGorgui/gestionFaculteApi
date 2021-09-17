@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.myproject.faculte.model.Cour;
 import com.myproject.faculte.model.Enseignant;
+import com.myproject.faculte.model.Groupe;
 
 
 @Repository
@@ -30,7 +31,15 @@ public interface EnseignantRepository extends JpaRepository<Enseignant, Long> {
 	@Query("select c from Cour c where c.enseignant = ?1")
 	List<Cour> findByEnseignantCours(Enseignant enseignant);
 	
-	
+	/*
+	 * //La liste des cours et des enseignants pour un groupe///
+	 * 
+	 * @Query(value =
+	 * "SELECT * FROM ENSEIGNANTS,COURS,ENSEIGNANTS-GROUPES WHERE COURS.ENSEIGNANT_ID=:ENSEIGNANTS.id AND ENSEIGNANTS.id=:ENSEIGNANTS-GROUPES.ENSEIGNANT_ID and ENSEIGNANTS.id=%:id, nativeQuery = true"
+	 * ) List<Enseignant> findByEnseignantList(@Param("id")Long id);
+	 */
+	//la liste des enseignant pour un groupe
+	 List<Enseignant> findByGroupesId(Long id);
 	
 	
 }

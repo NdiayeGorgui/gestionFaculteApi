@@ -58,4 +58,10 @@ public class GroupeServiceImpl implements GroupeService {
 		return groupeRepository.findByFormationId(id);
 	}
 
+	@Override
+	public List<Groupe> findByEnseignantsId(Long id) {
+		
+		return groupeRepository.findByEnseignantsId(id);
+	}
+
 }

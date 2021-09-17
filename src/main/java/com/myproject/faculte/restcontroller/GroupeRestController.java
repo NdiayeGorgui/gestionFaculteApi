@@ -85,4 +85,9 @@ public class GroupeRestController {
 		public List<Groupe> findByFormationId(@PathVariable("id") Long id) {
 			return groupeService.findByFormationId(id);
 		}
+	 @ApiOperation(value="Affiche la liste des groupes pour un enseignant  selon son id")
+	 @RequestMapping(value = "Groupes/Enseignant/{id}",method = RequestMethod.GET)
+		public List<Groupe> findByEnseignantsId(@PathVariable("id") Long id) {
+			return groupeService.findByEnseignantsId(id);
+		}
 }
