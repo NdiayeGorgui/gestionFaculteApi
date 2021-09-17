@@ -24,3 +24,6 @@ public class SwaggerConfig {
 	}
 
 }
+
+//http://localhost:8090/api/v2/api-docs  /la documentation a cette adresse format json
+//http://localhost:8090/api/swagger-ui.html /la documentation a cette adresse format html
