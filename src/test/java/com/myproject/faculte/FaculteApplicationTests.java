@@ -21,7 +21,7 @@ class FaculteApplicationTests {
 
 	@Autowired
 	private CourRepository courRepository;
-	
+
 	@Autowired
 	private GroupeRepository groupeRepository;
 
@@ -37,7 +37,7 @@ class FaculteApplicationTests {
 	@Test
 	public void testFindEnseignant() {
 		Enseignant e = enseignantRepository.findById(2L).get();
-		System.out.println(e.getFirstName()+" "+e.getLastName());
+		System.out.println(e.getFirstName() + " " + e.getLastName());
 	}
 
 	// methode de test pour modifier un enseignant
@@ -60,9 +60,10 @@ class FaculteApplicationTests {
 	public void testListerTousEnseignants() {
 		List<Enseignant> ens = enseignantRepository.findAll();
 		for (Enseignant e : ens) {
-			System.out.println(e.getFirstName()+" "+e.getLastName());
+			System.out.println(e.getFirstName() + " " + e.getLastName());
 		}
 	}
+
 	// methode de test pour lister les cours dont le nom est donné en parametre
 	@Test
 	public void testFindByLibelle() {
@@ -71,8 +72,9 @@ class FaculteApplicationTests {
 			System.out.println(c.getLibelle());
 		}
 	}
-	
-	// methode de test pour lister les cours dont le nom contient le mot qui est donné en parametre
+
+	// methode de test pour lister les cours dont le nom contient le mot qui est
+	// donné en parametre
 	@Test
 	public void testFindByLibelleContains() {
 		List<Cour> cours = courRepository.findByLibelleContains("app");
@@ -80,101 +82,94 @@ class FaculteApplicationTests {
 			System.out.print(c.getLibelle());
 		}
 	}
-	
-	@Test public void testfindByFirstNameLastNameStatut()
-	{
-	List<Enseignant> ens = enseignantRepository.findByFirstNameLastNameStatut("moussa", "fall","vacataire");
-	for (Enseignant e : ens)
-	{
-		System.out.println(e.getFirstName()+" "+e.getLastName()+" "+e.getStatut());
+
+	@Test
+	public void testfindByFirstNameLastNameStatut() {
+		List<Enseignant> ens = enseignantRepository.findByFirstNameLastNameStatut("moussa", "fall", "vacataire");
+		for (Enseignant e : ens) {
+			System.out.println(e.getFirstName() + " " + e.getLastName() + " " + e.getStatut());
+		}
 	}
+
+	// test pour trouver la liste des enseignants selon le statut, le nom ou ;e
+	// prénom
+
+	@Test
+	public void testfindByFirstNameOrLastNameOrStatut() {
+		List<Enseignant> ens = enseignantRepository.findByFirstNameLastNameStatut("vacataire");
+		for (Enseignant e : ens) {
+			System.out.println(e.getFirstName() + " " + e.getLastName() + " " + e.getStatut());
+		}
 	}
-	
-	//test pour trouver la liste des enseignants selon le statut, le nom ou ;e prénom
-	
-	@Test public void testfindByFirstNameOrLastNameOrStatut()
-	{
-	List<Enseignant> ens = enseignantRepository.findByFirstNameLastNameStatut("vacataire");
-	for (Enseignant e : ens)
-	{
-		System.out.println(e.getFirstName()+" "+e.getLastName()+" "+e.getStatut());
-	}
-	}
+
 	// test pour trouver la liste des enseignants selon le statut
-	@Test public void testfindByEnseignantStatut()
-	{
-	List<Enseignant> ens = enseignantRepository.findByEnseignantStatut("vacataire");
-	for (Enseignant e : ens)
-	{
-		System.out.println(e.getFirstName()+" "+e.getLastName()+" "+e.getStatut());
+	@Test
+	public void testfindByEnseignantStatut() {
+		List<Enseignant> ens = enseignantRepository.findByEnseignantStatut("vacataire");
+		for (Enseignant e : ens) {
+			System.out.println(e.getFirstName() + " " + e.getLastName() + " " + e.getStatut());
+		}
 	}
-	}
-	
+
 	// test pour trouver la liste des cours d'un enseignant donné
 	@Test
-	public void testfindByEnseignantCours()
-	{
+	public void testfindByEnseignantCours() {
 		Enseignant ens = new Enseignant();
-	    ens.setId(1L);
-	List<Cour> cours = enseignantRepository.findByEnseignantCours(ens);
-	for (Cour c : cours)
-	{
-	System.out.println(c.getLibelle());
+		ens.setId(1L);
+		List<Cour> cours = enseignantRepository.findByEnseignantCours(ens);
+		for (Cour c : cours) {
+			System.out.println(c.getLibelle());
+		}
+
 	}
-	
-	
-}
-	//trouver la liste des cours d'un enseignant selon l'id donné
+
+	// trouver la liste des cours d'un enseignant selon l'id donné
 	@Test
-	public void testfindByEnseignantId()
-	{
-		
-	List<Cour> cours = courRepository.findByEnseignantId(2L);
-		for (Cour c : cours){
-		System.out.println(c.getLibelle());
+	public void testfindByEnseignantId() {
+
+		List<Cour> cours = courRepository.findByEnseignantId(2L);
+		for (Cour c : cours) {
+			System.out.println(c.getLibelle());
 		}
 	}
-	
-	//test pour trouver la liste des groupes d'une formation selon le nom de la formation donné
-		@Test
-		public void testfindByFormationNomFormation()
-		{
-			
+
+	// test pour trouver la liste des groupes d'une formation selon le nom de la
+	// formation donné
+	@Test
+	public void testfindByFormationNomFormation() {
+
 		List<Groupe> groupes = groupeRepository.findByFormationNomFormation("Administration systèmes et réseaux");
-		for (Groupe g : groupes)
-		{
-		System.out.println(g.getId());
-		}
-		}
-		
-		//test pour trouver la liste des groupes d'une formation selon le nom de la formation donné
-				@Test
-				public void testfindByFormationId()
-				{
-					
-				List<Groupe> groupes = groupeRepository.findByFormationId(2L);
-				for (Groupe g : groupes)
-				{
-				System.out.println(g.getId());
-				}
-				}
-		
-		//test pour  trouver la liste des Enseignants pour un groupe
-		@Test public void testfindByGroupesId()
-		{
-		List<Enseignant> ens = enseignantRepository.findByGroupesId(2L);
-		for (Enseignant e : ens)
-		{
-			System.out.println(e.getFirstName()+" "+e.getLastName());
-		}
-		}
-		//test pour trouver la liste des groupes pour un enseignant
-		@Test public void testfindByEnseignantsId()
-		{
-		List<Groupe> grps = groupeRepository.findByEnseignantsId(2L);
-		for (Groupe g : grps)
-		{
+		for (Groupe g : groupes) {
 			System.out.println(g.getId());
 		}
+	}
+
+	// test pour trouver la liste des groupes d'une formation selon le nom de la
+	// formation donné
+	@Test
+	public void testfindByFormationId() {
+
+		List<Groupe> groupes = groupeRepository.findByFormationId(2L);
+		for (Groupe g : groupes) {
+			System.out.println(g.getId());
 		}
+	}
+
+	// test pour trouver la liste des Enseignants pour un groupe
+	@Test
+	public void testfindByGroupesId() {
+		List<Enseignant> ens = enseignantRepository.findByGroupesId(2L);
+		for (Enseignant e : ens) {
+			System.out.println(e.getFirstName() + " " + e.getLastName());
+		}
+	}
+
+	// test pour trouver la liste des groupes pour un enseignant
+	@Test
+	public void testfindByEnseignantsId() {
+		List<Groupe> grps = groupeRepository.findByEnseignantsId(2L);
+		for (Groupe g : grps) {
+			System.out.println(g.getId());
+		}
+	}
 }
