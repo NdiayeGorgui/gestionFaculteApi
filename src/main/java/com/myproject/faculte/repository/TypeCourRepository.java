@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import com.myproject.faculte.model.TypeCour;
 
-
 @Repository
 public interface TypeCourRepository extends JpaRepository<TypeCour, Long> {
 

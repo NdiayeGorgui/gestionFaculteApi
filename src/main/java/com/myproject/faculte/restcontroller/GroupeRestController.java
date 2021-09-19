@@ -20,81 +20,78 @@ import com.myproject.faculte.service.GroupeService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
-
 @Api(description = "Gestion des Groupes")
 @RestController
 //@RequestMapping("/api")
 @CrossOrigin
 public class GroupeRestController {
-	
+
 	@Autowired
 	private GroupeService groupeService;
-	
-	@ApiOperation(value="Affiche la liste des groupes")
-	@RequestMapping(value = "/Groupes",method = RequestMethod.GET)
+
+	@ApiOperation(value = "Affiche la liste des groupes")
+	@RequestMapping(value = "/Groupes", method = RequestMethod.GET)
 	public List<Groupe> getAllGroupes() {
 		return groupeService.getAllGroupes();
 	}
-	
 
-	@ApiOperation(value="Récupère un groupe selon son id")
-	 @RequestMapping(value = "Groupe/{id}", method = RequestMethod.GET)
-		public Groupe getGroupe(@PathVariable("id") final Long id) throws IdIntrouvableExecption {
-			Optional<Groupe> groupe = groupeService.getGroupe(id);
-			if(groupe.isPresent()) {
-				return groupe.get();
-			} else {
-				 throw new IdIntrouvableExecption("Le Groupe avec l'id "+id+" n'existe pas");
-			}
+	@ApiOperation(value = "Récupère un groupe selon son id")
+	@RequestMapping(value = "Groupe/{id}", method = RequestMethod.GET)
+	public Groupe getGroupe(@PathVariable("id") final Long id) throws IdIntrouvableExecption {
+		Optional<Groupe> groupe = groupeService.getGroupe(id);
+		if (groupe.isPresent()) {
+			return groupe.get();
+		} else {
+			throw new IdIntrouvableExecption("Le Groupe avec l'id " + id + " n'existe pas");
 		}
-	 
-	@ApiOperation(value="Ajouter un nouveau groupe")
-	 @RequestMapping(value = "/Groupes",method = RequestMethod.POST)
-		public Groupe createGroupe(@RequestBody Groupe groupe) {
-			return groupeService.saveGroupe(groupe);
-		}
-	 
-	@ApiOperation(value="Modifier un groupe selon son id")
-	 @RequestMapping(value = "/Groupe/{id}",method = RequestMethod.PUT)
-		public Groupe updateGroupe(@PathVariable("id") final Long id, @RequestBody Groupe groupe) {
-			Optional<Groupe> g = groupeService.getGroupe(id);
-			if(g.isPresent()) {
-				Groupe currentGroupe = g.get();
+	}
 
-				
-				Formation formation = groupe.getFormation();
-				if(formation != null) {
-					currentGroupe.setFormation(formation);
-				}
-				
-				
-				groupeService.saveGroupe(currentGroupe);
-				return currentGroupe;
-			} else {
-				return null;
+	@ApiOperation(value = "Ajouter un nouveau groupe")
+	@RequestMapping(value = "/Groupes", method = RequestMethod.POST)
+	public Groupe createGroupe(@RequestBody Groupe groupe) {
+		return groupeService.saveGroupe(groupe);
+	}
+
+	@ApiOperation(value = "Modifier un groupe selon son id")
+	@RequestMapping(value = "/Groupe/{id}", method = RequestMethod.PUT)
+	public Groupe updateGroupe(@PathVariable("id") final Long id, @RequestBody Groupe groupe) {
+		Optional<Groupe> g = groupeService.getGroupe(id);
+		if (g.isPresent()) {
+			Groupe currentGroupe = g.get();
+
+			Formation formation = groupe.getFormation();
+			if (formation != null) {
+				currentGroupe.setFormation(formation);
 			}
+
+			groupeService.saveGroupe(currentGroupe);
+			return currentGroupe;
+		} else {
+			return null;
 		}
-	 
-	@ApiOperation(value="Supprimer un groupe selon son id")
-	 @RequestMapping(value = "Groupe/{id}", method = RequestMethod.DELETE)
-		public void deleteGroupe(@PathVariable("id") Long id) {
-		 groupeService.deleteGroupeById(id);
-		}
-	
-	 @ApiOperation(value="Affiche la liste des groupes d'une formation sélctionné selon son id")
-	 @RequestMapping(value = "Groupes/Formation/{id}",method = RequestMethod.GET)
-		public List<Groupe> findByFormationId(@PathVariable("id") Long id) {
-			return groupeService.findByFormationId(id);
-		}
-	
-	 @ApiOperation(value="Affiche la liste des groupes d'une formation sélctionné selon son nom")
-	 @RequestMapping(value = "Groupes/Formation/{nom}",method = RequestMethod.GET)
-		public List<Groupe> findByFormationNomFormation(@PathVariable("nom") String nom) {
-			return groupeService.findByFormationNomFormation(nom);
-		}
-	 @ApiOperation(value="Affiche la liste des groupes pour un enseignant  selon son id")
-	 @RequestMapping(value = "Groupes/Enseignant/{id}",method = RequestMethod.GET)
-		public List<Groupe> findByEnseignantsId(@PathVariable("id") Long id) {
-			return groupeService.findByEnseignantsId(id);
-		}
+	}
+
+	@ApiOperation(value = "Supprimer un groupe selon son id")
+	@RequestMapping(value = "Groupe/{id}", method = RequestMethod.DELETE)
+	public void deleteGroupe(@PathVariable("id") Long id) {
+		groupeService.deleteGroupeById(id);
+	}
+
+	@ApiOperation(value = "Affiche la liste des groupes d'une formation sélctionné selon son id")
+	@RequestMapping(value = "Groupes/Formation/{id}", method = RequestMethod.GET)
+	public List<Groupe> findByFormationId(@PathVariable("id") Long id) {
+		return groupeService.findByFormationId(id);
+	}
+
+	@ApiOperation(value = "Affiche la liste des groupes d'une formation sélctionné selon son nom")
+	@RequestMapping(value = "Groupes/Formation/{nom}", method = RequestMethod.GET)
+	public List<Groupe> findByFormationNomFormation(@PathVariable("nom") String nom) {
+		return groupeService.findByFormationNomFormation(nom);
+	}
+
+	@ApiOperation(value = "Affiche la liste des groupes pour un enseignant  selon son id")
+	@RequestMapping(value = "Groupes/Enseignant/{id}", method = RequestMethod.GET)
+	public List<Groupe> findByEnseignantsId(@PathVariable("id") Long id) {
+		return groupeService.findByEnseignantsId(id);
+	}
 }
