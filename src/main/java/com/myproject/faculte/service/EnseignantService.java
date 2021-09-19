@@ -23,4 +23,5 @@ public interface EnseignantService {
 	List<Cour> findByEnseignantCours(Enseignant enseignant);
 	List<Enseignant> findByEnseignantStatut( String statut);
 	List<Enseignant> findByGroupesId(Long id);
+	List<Enseignant> findByFirstNameLastNameStatut( String value);
 }
