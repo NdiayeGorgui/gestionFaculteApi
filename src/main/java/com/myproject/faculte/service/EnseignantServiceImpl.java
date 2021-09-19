@@ -74,6 +74,12 @@ public class EnseignantServiceImpl implements EnseignantService {
 		return enseignantRepository.findByGroupesId(id);
 	}
 
+	@Override
+	public List<Enseignant> findByFirstNameLastNameStatut(String value) {
+		
+		return enseignantRepository.findByFirstNameLastNameStatut(value);
+	}
+
 	
 
 }
