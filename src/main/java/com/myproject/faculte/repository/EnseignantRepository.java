@@ -23,6 +23,10 @@ public interface EnseignantRepository extends JpaRepository<Enseignant, Long> {
 	List<Enseignant> findByFirstNameLastNameStatut(@Param("prenom") String prenom, @Param("nom") String nom,
 			@Param("statut") String statut);
 
+	// pour afficher la liste des enseignants( le nom ,prenom ou statut de l"ens)
+		@Query("select e from Enseignant e where e.firstName like %?1 or e.lastName like %?1 or e.statut like %?1")
+		List<Enseignant> findByFirstNameLastNameStatut( String value);
+		
 	// pour afficher la liste des enseignants(suivant le statut de l"ens)
 	@Query("select e from Enseignant e where  e.statut like %:statut")
 	List<Enseignant> findByEnseignantStatut(@Param("statut") String statut);
@@ -40,6 +44,7 @@ public interface EnseignantRepository extends JpaRepository<Enseignant, Long> {
 	 */
 	//la liste des enseignant pour un groupe
 	 List<Enseignant> findByGroupesId(Long id);
+	 
 	
 	
 }
