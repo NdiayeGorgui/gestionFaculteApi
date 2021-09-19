@@ -110,6 +110,12 @@ public class EnseignantRestController {
 		return enseignantService.findByEnseignantStatut(statut);
 	}
 	
+	 @ApiOperation(value="Affiche la liste des  Enseignants  selon  le nom, le prénom ou le statut")
+		@RequestMapping(value = "/Enseignants/Cherche/{value}",method = RequestMethod.GET)
+		public List<Enseignant> findByFirstNameLastNameStatut(@PathVariable("value") String value) {
+			return enseignantService.findByFirstNameLastNameStatut(value);
+		}
+	 
 	 @ApiOperation(value="Affiche la liste des  Enseignants  pour un groupe selon son id")
 		@RequestMapping(value = "/Enseignants/Groupe/{id}",method = RequestMethod.GET)
 		public List<Enseignant> findByGroupesId(@PathVariable("id") Long id) {
