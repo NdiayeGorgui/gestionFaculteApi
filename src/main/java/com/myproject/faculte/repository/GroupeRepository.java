@@ -13,7 +13,10 @@ import com.myproject.faculte.model.Groupe;
 @Repository
 public interface GroupeRepository extends JpaRepository<Groupe, Long>{
 
-	List<Groupe> findByFormationId(Long id);
+	//liste des groupes seltionon l'id de la formation
+		List<Groupe> findByFormationId(Long id);
+	//liste des groupes seltionon le nom de la formation
+	List<Groupe> findByFormationNomFormation(String nom);
 	//la liste des groupes pour un enseignant
 	List<Groupe> findByEnseignantsId(Long id);
 }

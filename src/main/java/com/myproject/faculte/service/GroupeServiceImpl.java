@@ -52,16 +52,24 @@ public class GroupeServiceImpl implements GroupeService {
 		return groupeRepository.findAll();
 	}
 
-	@Override
-	public List<Groupe> findByFormationId(Long id) {
-		
-		return groupeRepository.findByFormationId(id);
-	}
+	
 
 	@Override
 	public List<Groupe> findByEnseignantsId(Long id) {
 		
 		return groupeRepository.findByEnseignantsId(id);
+	}
+
+	@Override
+	public List<Groupe> findByFormationNomFormation(String nom) {
+		
+		return groupeRepository.findByFormationNomFormation(nom);
+	}
+
+	@Override
+	public List<Groupe> findByFormationId(Long id) {
+		
+		return groupeRepository.findByFormationId(id);
 	}
 
 }

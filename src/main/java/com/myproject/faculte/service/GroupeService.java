@@ -22,7 +22,7 @@ public interface GroupeService {
 	List<Groupe> getAllGroupes();
 	
 	
-	
 	List<Groupe> findByFormationId(Long id);
+	List<Groupe> findByFormationNomFormation(String nom);
 	List<Groupe> findByEnseignantsId(Long id);
 }
