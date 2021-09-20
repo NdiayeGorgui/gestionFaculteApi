@@ -52,4 +52,16 @@ public class FormationServiceImpl implements FormationService {
 		return formationRepository.findAll();
 	}
 
+	@Override
+	public List<Formation> findByCoursId(Long id) {
+		
+		return formationRepository.findByCoursId(id);
+	}
+
+	@Override
+	public List<Formation> findByCoursLibelle(String libelle) {
+		
+		return formationRepository.findByCoursLibelle(libelle);
+	}
+
 }
