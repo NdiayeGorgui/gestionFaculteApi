@@ -101,10 +101,17 @@ public class CourRestController {
 	public List<Cour> findByLibelleContains(@PathVariable("libelle") String libelle) {
 		return courService.findByLibelleContains(libelle);
 	}
-	/*
-	 * @RequestMapping(value = "Cours/TypeCour/{type}",method = RequestMethod.GET)
-	 * public List<Cour> findByTypeCourType(@PathVariable("type") String type) {
-	 * return courService.findByTypeCourType(type); }
-	 */
+	
+	@ApiOperation(value = "Affiche la liste de cours selon l'id de la formation selectionnée")
+	@RequestMapping(value = "Cours/Formation/{id}", method = RequestMethod.GET)
+	public List<Cour> findByFormationsId(@PathVariable("id") Long id) {
+		return courService.findByFormationsId(id);
+	}
+	
+	@ApiOperation(value = "Affiche la liste de cours selon le nom de la formation")
+	@RequestMapping(value = "Cours/Formations/{nom}", method = RequestMethod.GET)
+	public List<Cour> findByFormationsNomFormation(@PathVariable("nom") String nom) {
+		return courService.findByFormationsNomFormation(nom);
+	}
 
 }
