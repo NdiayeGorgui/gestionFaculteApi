@@ -23,6 +23,9 @@ public interface FormationService {
 	List<Formation> getAllFormations();
 	
 	
+	List<Formation> findByCoursId(Long id);
+	
+	List<Formation> findByCoursLibelle(String libelle);
 	
 
 }
