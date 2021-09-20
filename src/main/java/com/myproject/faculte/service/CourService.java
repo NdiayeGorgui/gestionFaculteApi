@@ -5,9 +5,8 @@ import java.util.Optional;
 
 import com.myproject.faculte.model.Cour;
 
-
 public interface CourService {
-	
+
 	Cour saveCour(Cour c);
 
 	Cour updateCour(Cour c);
@@ -16,12 +15,16 @@ public interface CourService {
 
 	void deleteCourById(Long id);
 
-	Optional<Cour>  getCour(Long id);
+	Optional<Cour> getCour(Long id);
 
 	List<Cour> getAllCours();
+
 	
-	
-	//List<Cour> findByTypeCourType(String type);
 	List<Cour> findByLibelleContains(String libelle);
+
 	List<Cour> findByEnseignantId(Long id);
+
+	List<Cour> findByFormationsId(Long id);
+
+	List<Cour> findByFormationsNomFormation(String nom);
 }
