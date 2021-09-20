@@ -8,9 +8,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.myproject.faculte.model.Cour;
 import com.myproject.faculte.model.Enseignant;
+import com.myproject.faculte.model.Formation;
 import com.myproject.faculte.model.Groupe;
 import com.myproject.faculte.repository.CourRepository;
 import com.myproject.faculte.repository.EnseignantRepository;
+import com.myproject.faculte.repository.FormationRepository;
 import com.myproject.faculte.repository.GroupeRepository;
 
 @SpringBootTest
@@ -24,6 +26,9 @@ class FaculteApplicationTests {
 
 	@Autowired
 	private GroupeRepository groupeRepository;
+	
+	@Autowired
+	private FormationRepository formationRepository;
 
 	// methode de test pour enregistrer un enseignant
 	@Test
@@ -79,9 +84,27 @@ class FaculteApplicationTests {
 	public void testFindByLibelleContains() {
 		List<Cour> cours = courRepository.findByLibelleContains("app");
 		for (Cour c : cours) {
-			System.out.print(c.getLibelle());
+			System.out.println(c.getLibelle());
 		}
 	}
+	
+	// tester liste des cours pour une formation selon l'id de la formation
+		@Test
+		public void testFindByFormationsId() {
+			List<Cour> cours = courRepository.findByFormationsId(3L);
+			for (Cour c : cours) {
+				System.out.println(c.getLibelle());
+			}
+		}
+		
+		// tester liste des cours pour une formation selon le nom de la formation
+				@Test
+				public void testFindByFormationsNomFormation() {
+					List<Cour> cours = courRepository.findByFormationsNomFormation("Mathématique appliquée à l'informatique");
+					for (Cour c : cours) {
+						System.out.println(c.getLibelle());
+					}
+				}
 
 	@Test
 	public void testfindByFirstNameLastNameStatut() {
@@ -172,4 +195,22 @@ class FaculteApplicationTests {
 			System.out.println(g.getId());
 		}
 	}
+	
+	// tester la liste des formation où un un cours existe selon son id
+			@Test
+			public void testfindByCoursId() {
+				List<Formation> forms = formationRepository.findByCoursId(3L);
+				for (Formation f : forms) {
+					System.out.println(f.getNomFormation());
+				}
+			}
+			
+			// tester la liste des formation où un un cours existe selon son nom
+						@Test
+						public void testfindByCoursLibelle() {
+							List<Formation> forms = formationRepository.findByCoursLibelle("Algorithmie");
+							for (Formation f : forms) {
+								System.out.println(f.getNomFormation());
+							}
+						}
 }
