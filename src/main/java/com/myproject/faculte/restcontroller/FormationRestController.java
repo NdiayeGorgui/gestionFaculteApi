@@ -83,5 +83,17 @@ public class FormationRestController {
 	public void deleteFormation(@PathVariable("id") Long id) {
 		formationService.deleteFormationById(id);
 	}
+	
+	@ApiOperation(value = "Affiche la liste des formations où un un cours existe selon son id")
+	@RequestMapping(value = "Formation/Cour/{id}",  method = RequestMethod.GET)
+	public List<Formation> findByCoursId(@PathVariable("id") Long id) {
+		return formationService.findByCoursId(id);
+	}
+	
+	@ApiOperation(value = "Affiche la liste des formations où un un cours existe selon son libellé")
+	@RequestMapping(value = "Formation/Cours/{libelle}",  method = RequestMethod.GET)
+	public List<Formation> findByCoursLibelle(@PathVariable("libelle") String libelle) {
+		return formationService.findByCoursLibelle(libelle);
+	}
 
 }
