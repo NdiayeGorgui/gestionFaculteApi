@@ -64,6 +64,18 @@ public class CourServiceImpl implements CourService{
 		return courRepository.findByLibelleContains(libelle);
 	}
 
+	@Override
+	public List<Cour> findByFormationsId(Long id) {
+		
+		return courRepository.findByFormationsId(id);
+	}
+
+	@Override
+	public List<Cour> findByFormationsNomFormation(String nom) {
+		
+		return courRepository.findByFormationsNomFormation(nom);
+	}
+
 	
 	/*
 	 * @Override public List<Cour> findByTypeCourType(String type) {
