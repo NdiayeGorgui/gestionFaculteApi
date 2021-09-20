@@ -21,6 +21,12 @@ public interface CourRepository extends JpaRepository<Cour, Long> {
 
 	List<Cour> findByEnseignantId(Long id);
 
+	// liste des cours pour une formation selon l'id de la formation
+	List<Cour> findByFormationsId(Long id);
+
+	// liste des cours pour une formation selon le nom de la formation
+	List<Cour> findByFormationsNomFormation(String nom);
+
 	// List<Cour> findByTypeCourType(String type);
 	/*
 	 * //pour afficher les cours d'un certain type
