@@ -15,5 +15,8 @@ public interface FormationRepository extends JpaRepository<Formation, Long> {
 
 	// la liste des formations où un un cours existe selon son nom
 	List<Formation> findByCoursLibelle(String libelle);
+	
+	// pour chercher les formations dont le nom contenant le nom donné en parametre
+	List<Formation >findByNomFormationContains(String nom);
 
 }

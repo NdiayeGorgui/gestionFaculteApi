@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.myproject.faculte.exception.IdIntrouvableExecption;
+import com.myproject.faculte.model.Cour;
 import com.myproject.faculte.model.Formation;
 import com.myproject.faculte.service.FormationService;
 
@@ -21,7 +22,7 @@ import io.swagger.annotations.ApiOperation;
 @Api(description = "Gestion des Formations")
 @RestController
 //@RequestMapping("/api")
-@CrossOrigin
+@CrossOrigin(origins="http://localhost:3000")
 public class FormationRestController {
 
 	@Autowired
@@ -34,7 +35,7 @@ public class FormationRestController {
 	}
 
 	@ApiOperation(value = "Récupère une formation selon son id")
-	@RequestMapping(value = "Formation/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "Formations/{id}", method = RequestMethod.GET)
 	public Formation getFormation(@PathVariable("id") final Long id) throws IdIntrouvableExecption {
 		Optional<Formation> formation = formationService.getFormation(id);
 		if (formation.isPresent()) {
@@ -51,7 +52,7 @@ public class FormationRestController {
 	}
 
 	@ApiOperation(value = "Modifier une formation selon son id")
-	@RequestMapping(value = "/Formation/{id}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/Formations/{id}", method = RequestMethod.PUT)
 	public Formation updateFormation(@PathVariable("id") final Long id, @RequestBody Formation formation) {
 		Optional<Formation> f = formationService.getFormation(id);
 		if (f.isPresent()) {
@@ -79,21 +80,27 @@ public class FormationRestController {
 	}
 
 	@ApiOperation(value = "Supprimer une formation selon son id")
-	@RequestMapping(value = "Formation/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "Formations/{id}", method = RequestMethod.DELETE)
 	public void deleteFormation(@PathVariable("id") Long id) {
 		formationService.deleteFormationById(id);
 	}
 	
 	@ApiOperation(value = "Affiche la liste des formations où un un cours existe selon son id")
-	@RequestMapping(value = "Formation/Cour/{id}",  method = RequestMethod.GET)
+	@RequestMapping(value = "Formations/Cours/{id}",  method = RequestMethod.GET)
 	public List<Formation> findByCoursId(@PathVariable("id") Long id) {
 		return formationService.findByCoursId(id);
 	}
 	
 	@ApiOperation(value = "Affiche la liste des formations où un un cours existe selon son libellé")
-	@RequestMapping(value = "Formation/Cours/{libelle}",  method = RequestMethod.GET)
+	@RequestMapping(value = "Formations/Cours/Libelle/{libelle}",  method = RequestMethod.GET)
 	public List<Formation> findByCoursLibelle(@PathVariable("libelle") String libelle) {
 		return formationService.findByCoursLibelle(libelle);
+	}
+	
+	@ApiOperation(value = "Affiche la liste de formations contenant un cercain critére")
+	@RequestMapping(value = "Formations/Cherche/{nom}", method = RequestMethod.GET)
+	public List<Formation> findByNomFormationContains(@PathVariable("nom") String nom) {
+		return formationService.findByNomFormationContains(nom);
 	}
 
 }

@@ -3,6 +3,7 @@ package com.myproject.faculte.model;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -31,7 +32,7 @@ public class TypeCour  {
 	 private double prix;
 	 
 	 @JsonIgnore
-		@OneToMany(mappedBy = "typecour")
+		@OneToMany(mappedBy = "typecour",cascade = CascadeType.ALL)
 		private List<Cour> cours;
 }
 

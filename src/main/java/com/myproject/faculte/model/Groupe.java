@@ -37,11 +37,11 @@ public class Groupe {
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	// @Column(name="id_groupe")
 	 private Long id;
-	
+	 private String numeroGroupe;
 	 @ManyToOne
 		private Formation formation;
 	 
-	 @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+	 @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	    @JoinTable(name = "enseignants_groupes",
 	            joinColumns = {
 	                    @JoinColumn(name = "groupe_id", referencedColumnName = "id",

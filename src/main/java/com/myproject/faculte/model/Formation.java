@@ -39,11 +39,11 @@ public class Formation {
 	 private String annee;
 	 
 	 
-		@OneToMany(mappedBy = "formation")
+		@OneToMany(mappedBy = "formation",cascade = CascadeType.ALL)
 		@JsonIgnore
 		private List<Groupe> groupes;
 		
-		 @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+		 @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 		    @JoinTable(name = "cours_formations",
 		            joinColumns = {
 		                    @JoinColumn(name = "formation_id", referencedColumnName = "id",

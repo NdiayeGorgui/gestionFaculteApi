@@ -35,6 +35,8 @@ public interface EnseignantRepository extends JpaRepository<Enseignant, Long> {
 	@Query("select c from Cour c where c.enseignant = ?1")
 	List<Cour> findByEnseignantCours(Enseignant enseignant);
 	
+	List<Enseignant> findByOrderByLastNameAsc();
+	
 	/*
 	 * //La liste des cours et des enseignants pour un groupe///
 	 * 

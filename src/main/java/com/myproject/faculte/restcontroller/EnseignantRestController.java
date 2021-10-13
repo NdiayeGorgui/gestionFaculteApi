@@ -23,7 +23,8 @@ import io.swagger.annotations.ApiOperation;
 @Api(description = "Gestion des Enseignants")
 @RestController
 //@RequestMapping("/api")
-@CrossOrigin
+@CrossOrigin(origins="http://localhost:3000")
+
 public class EnseignantRestController {
 
 	@Autowired
@@ -41,7 +42,7 @@ public class EnseignantRestController {
 	 * enseignantService.getEnseignant(id); }
 	 */
 	@ApiOperation(value = "Récupère un Enseignant selon son id")
-	@RequestMapping(value = "Enseignant/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "Enseignants/{id}", method = RequestMethod.GET)
 	public Enseignant getEnseignant(@PathVariable("id") final Long id) throws IdIntrouvableExecption {
 		Optional<Enseignant> enseignant = enseignantService.getEnseignant(id);
 		if (enseignant.isPresent()) {
@@ -63,7 +64,7 @@ public class EnseignantRestController {
 	 * enseignantService.updateEnseignant(enseignant); }
 	 */
 	@ApiOperation(value = "Modifier un Enseignant selon son id")
-	@RequestMapping(value = "/Enseignant/{id}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/Enseignants/{id}", method = RequestMethod.PUT)
 	public Enseignant updateEnseignant(@PathVariable("id") final Long id, @RequestBody Enseignant enseignant) {
 		Optional<Enseignant> e = enseignantService.getEnseignant(id);
 		if (e.isPresent()) {
@@ -76,7 +77,7 @@ public class EnseignantRestController {
 			String lastName = enseignant.getLastName();
 			if (lastName != null) {
 				currentEnseignant.setLastName(lastName);
-				;
+				
 			}
 			String mail = enseignant.getMail();
 			if (mail != null) {
@@ -85,7 +86,7 @@ public class EnseignantRestController {
 			String adress = enseignant.getAdress();
 			if (adress != null) {
 				currentEnseignant.setAdress(adress);
-				;
+				
 			}
 			String telephone = enseignant.getTelephone();
 			if (telephone != null) {
@@ -94,7 +95,7 @@ public class EnseignantRestController {
 			String statut = enseignant.getStatut();
 			if (statut != null) {
 				currentEnseignant.setStatut(statut);
-				;
+				
 			}
 			enseignantService.saveEnseignant(currentEnseignant);
 			return currentEnseignant;
@@ -104,13 +105,13 @@ public class EnseignantRestController {
 	}
 
 	@ApiOperation(value = "Supprimer un Enseignant selon son id")
-	@RequestMapping(value = "Enseignant/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "Enseignants/{id}", method = RequestMethod.DELETE)
 	public void deleteEnseignant(@PathVariable("id") Long id) {
 		enseignantService.deleteEnseignantById(id);
 	}
 
 	@ApiOperation(value = "Affiche la liste des  Enseignants  selon le statut sélctionné")
-	@RequestMapping(value = "/Enseignants/{statut}", method = RequestMethod.GET)
+	@RequestMapping(value = "/Enseignants/Statut/{statut}", method = RequestMethod.GET)
 	public List<Enseignant> findByEnseignantStatut(@PathVariable("statut") String statut) {
 		return enseignantService.findByEnseignantStatut(statut);
 	}
@@ -125,6 +126,14 @@ public class EnseignantRestController {
 	@RequestMapping(value = "/Enseignants/Groupe/{id}", method = RequestMethod.GET)
 	public List<Enseignant> findByGroupesId(@PathVariable("id") Long id) {
 		return enseignantService.findByGroupesId(id);
+	}
+	
+	
+
+	@ApiOperation(value = "Affiche la liste des Enseignants par ordre alphabétique suivant les noms")
+	@RequestMapping(value = "Trier/Enseignants", method = RequestMethod.GET)
+	public List<Enseignant> findByOrderByLastNameAsc() {
+		return enseignantService.findByOrderByLastNameAsc();
 	}
 
 }

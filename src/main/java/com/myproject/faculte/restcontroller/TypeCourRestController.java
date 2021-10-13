@@ -20,8 +20,8 @@ import io.swagger.annotations.ApiOperation;
 
 @Api(description = "Gestion des Types de cours")
 @RestController
-//@RequestMapping("/api")
-@CrossOrigin
+
+@CrossOrigin(origins="http://localhost:3000")
 public class TypeCourRestController {
 
 	@Autowired
@@ -34,7 +34,7 @@ public class TypeCourRestController {
 	}
 
 	@ApiOperation(value = "Récupère un type de cours selon son id")
-	@RequestMapping(value = "TypeCour/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "TypeCours/{id}", method = RequestMethod.GET)
 	public TypeCour getTypeCour(@PathVariable("id") final Long id) throws IdIntrouvableExecption {
 		Optional<TypeCour> typeCour = typeCourService.getTypeCour(id);
 		if (typeCour.isPresent()) {
@@ -51,7 +51,7 @@ public class TypeCourRestController {
 	}
 
 	@ApiOperation(value = "Modifier un type de cours selon son id")
-	@RequestMapping(value = "/TypeCour/{id}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/TypeCours/{id}", method = RequestMethod.PUT)
 	public TypeCour updateTypeCour(@PathVariable("id") final Long id, @RequestBody TypeCour typeCour) {
 		Optional<TypeCour> tc = typeCourService.getTypeCour(id);
 		if (tc.isPresent()) {
@@ -74,7 +74,7 @@ public class TypeCourRestController {
 	}
 
 	@ApiOperation(value = "Supprimer un type de cours selon son id")
-	@RequestMapping(value = "TypeCour/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "TypeCours/{id}", method = RequestMethod.DELETE)
 	public void deleteCour(@PathVariable("id") Long id) {
 		typeCourService.deleteTypeCourById(id);
 	}

@@ -26,6 +26,7 @@ public interface FormationService {
 	List<Formation> findByCoursId(Long id);
 	
 	List<Formation> findByCoursLibelle(String libelle);
+	List<Formation >findByNomFormationContains(String nom);
 	
 
 }

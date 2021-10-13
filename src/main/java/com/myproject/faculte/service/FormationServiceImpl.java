@@ -64,4 +64,10 @@ public class FormationServiceImpl implements FormationService {
 		return formationRepository.findByCoursLibelle(libelle);
 	}
 
+	@Override
+	public List<Formation> findByNomFormationContains(String nom) {
+		
+		return formationRepository.findByNomFormationContains(nom);
+	}
+
 }

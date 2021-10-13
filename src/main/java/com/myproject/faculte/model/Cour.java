@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,18 +14,22 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 @Entity
 @Table(name = "cours")
+
 public class Cour {
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,11 +40,14 @@ public class Cour {
 	 
 	 @ManyToOne
 		private Enseignant enseignant;
+	 @Transient
+	 private Long enseignant_id;
 	 @ManyToOne
 		private TypeCour typecour;
+	 @Transient
+	 private Long typecour_id;
 	 
 	 @JsonIgnore
-	 @ManyToMany(mappedBy = "cours", fetch = FetchType.LAZY)
+	 @ManyToMany(mappedBy = "cours", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	 private Set<Formation> formations= new HashSet<>();
-
 }

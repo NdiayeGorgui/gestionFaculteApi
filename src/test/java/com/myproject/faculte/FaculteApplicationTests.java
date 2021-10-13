@@ -2,9 +2,11 @@ package com.myproject.faculte;
 
 import java.util.List;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.web.client.ExpectedCount;
 
 import com.myproject.faculte.model.Cour;
 import com.myproject.faculte.model.Enseignant;
@@ -33,8 +35,8 @@ class FaculteApplicationTests {
 	// methode de test pour enregistrer un enseignant
 	@Test
 	public void testCreateEnseignant() {
-		Enseignant ens = new Enseignant("bouba", "diop", "2255, rue tillemont", "diop@hotmail.fr", "4355423654",
-				"contactuel");
+		Enseignant ens = new Enseignant(null,"bouba", "diop", "2255, rue tillemont", "diop@hotmail.fr", "4355423654",
+				"contactuel",null,null);
 		enseignantRepository.save(ens);
 	}
 
@@ -42,9 +44,15 @@ class FaculteApplicationTests {
 	@Test
 	public void testFindEnseignant() {
 		Enseignant e = enseignantRepository.findById(2L).get();
-		System.out.println(e.getFirstName() + " " + e.getLastName());
+		
+		 String nom=e.getFirstName();
+			Assertions.assertEquals("Mikael1",nom);	
+		
+		//System.out.println(e.getFirstName() + " " + e.getLastName());
 	}
-
+	
+	
+	 
 	// methode de test pour modifier un enseignant
 	@Test
 	public void testUpdateEnseignant() {
@@ -60,6 +68,7 @@ class FaculteApplicationTests {
 		;
 	}
 
+	
 	// methode de test pour lister les enseignants
 	@Test
 	public void testListerTousEnseignants() {
@@ -68,6 +77,15 @@ class FaculteApplicationTests {
 			System.out.println(e.getFirstName() + " " + e.getLastName());
 		}
 	}
+	
+	// methode de test pour lister les enseignants par ordre suivant les noms
+		@Test
+		public void testfindByOrderByLastNameAs() {
+			List<Enseignant> ens = enseignantRepository.findByOrderByLastNameAsc();
+			for (Enseignant e : ens) {
+				System.out.println(e.getLastName() + " " + e.getFirstName());
+			}
+		}
 
 	// methode de test pour lister les cours dont le nom est donné en parametre
 	@Test
@@ -82,7 +100,7 @@ class FaculteApplicationTests {
 	// donné en parametre
 	@Test
 	public void testFindByLibelleContains() {
-		List<Cour> cours = courRepository.findByLibelleContains("app");
+		List<Cour> cours = courRepository.findByLibelleContains("al");
 		for (Cour c : cours) {
 			System.out.println(c.getLibelle());
 		}

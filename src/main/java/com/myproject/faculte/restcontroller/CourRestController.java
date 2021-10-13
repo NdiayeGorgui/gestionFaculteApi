@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiOperation;
 
 @Api(description = "Gestion des Cours")
 @RestController
-@CrossOrigin
+@CrossOrigin(origins="http://localhost:3000")
 public class CourRestController {
 
 	@Autowired
@@ -34,7 +34,7 @@ public class CourRestController {
 	}
 
 	@ApiOperation(value = "Récupère un cours selon son id")
-	@RequestMapping(value = "Cour/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "Cours/{id}", method = RequestMethod.GET)
 	public Cour getCour(@PathVariable("id") final Long id) throws IdIntrouvableExecption {
 		Optional<Cour> cour = courService.getCour(id);
 		if (cour.isPresent()) {
@@ -51,9 +51,10 @@ public class CourRestController {
 	public Cour createCour(@RequestBody Cour cour) {
 		return courService.saveCour(cour);
 	}
-
+	
+	
 	@ApiOperation(value = "Modifier un cours selon son id")
-	@RequestMapping(value = "/Cour/{id}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/Cours/{id}", method = RequestMethod.PUT)
 	public Cour updateCour(@PathVariable("id") final Long id, @RequestBody Cour cour) {
 		Optional<Cour> c = courService.getCour(id);
 		if (c.isPresent()) {
@@ -85,25 +86,25 @@ public class CourRestController {
 	}
 
 	@ApiOperation(value = "Supprimer un cours selon son id")
-	@RequestMapping(value = "Cour/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "Cours/{id}", method = RequestMethod.DELETE)
 	public void deleteCour(@PathVariable("id") Long id) {
 		courService.deleteCourById(id);
 	}
 
 	@ApiOperation(value = "Affiche la liste de cours d'un Enseignant sélctionné selon son id")
-	@RequestMapping(value = "Cours/Enseignant/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "Cours/Enseignants/{id}", method = RequestMethod.GET)
 	public List<Cour> findByEnseignantId(@PathVariable("id") Long id) {
 		return courService.findByEnseignantId(id);
 	}
-
+  
 	@ApiOperation(value = "Affiche la liste de cours contenant un cercain critére")
-	@RequestMapping(value = "Cours/{libelle}", method = RequestMethod.GET)
+	@RequestMapping(value = "Cours/Libelle/{libelle}", method = RequestMethod.GET)
 	public List<Cour> findByLibelleContains(@PathVariable("libelle") String libelle) {
 		return courService.findByLibelleContains(libelle);
 	}
 	
 	@ApiOperation(value = "Affiche la liste de cours selon l'id de la formation selectionnée")
-	@RequestMapping(value = "Cours/Formation/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "Cours/Formations/{id}", method = RequestMethod.GET)
 	public List<Cour> findByFormationsId(@PathVariable("id") Long id) {
 		return courService.findByFormationsId(id);
 	}

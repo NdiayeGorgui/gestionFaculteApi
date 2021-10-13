@@ -10,6 +10,9 @@ import com.myproject.faculte.model.Groupe;
 
 @Repository
 public interface GroupeRepository extends JpaRepository<Groupe, Long> {
+	
+	// liste des groupes selon le numero du groupe
+	List<Groupe>findByNumeroGroupe(String numero);
 
 	// liste des groupes selon l'id de la formation
 	List<Groupe> findByFormationId(Long id);

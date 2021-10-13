@@ -80,6 +80,12 @@ public class EnseignantServiceImpl implements EnseignantService {
 		return enseignantRepository.findByFirstNameLastNameStatut(value);
 	}
 
+	@Override
+	public List<Enseignant> findByOrderByLastNameAsc() {
+		
+		return enseignantRepository.findByOrderByLastNameAsc();
+	}
+
 	
 
 }

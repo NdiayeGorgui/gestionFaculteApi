@@ -72,4 +72,10 @@ public class GroupeServiceImpl implements GroupeService {
 		return groupeRepository.findByFormationId(id);
 	}
 
+	@Override
+	public List<Groupe> findByNumeroGroupe(String numero) {
+		
+		return groupeRepository.findByNumeroGroupe(numero);
+	}
+
 }

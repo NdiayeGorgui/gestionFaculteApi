@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -51,23 +52,15 @@ public class Enseignant  {
 	
 	 
 	 @JsonIgnore
-		@OneToMany(mappedBy = "enseignant")
+		@OneToMany(mappedBy = "enseignant",cascade = CascadeType.ALL)
 		private List<Cour> cours;
 	 
 	 @JsonIgnore
-	 @ManyToMany(mappedBy = "enseignants", fetch = FetchType.LAZY)
+	 @ManyToMany(mappedBy = "enseignants", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
 	 private Set<Groupe> groupes = new HashSet<>();
 
 
-	public Enseignant(String firstName, String lastName, String adress, String mail, String telephone, String statut) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.adress = adress;
-		this.mail = mail;
-		this.telephone = telephone;
-		this.statut = statut;
-	}
+		
 
 
 	
