@@ -40,12 +40,10 @@ public class Cour {
 	 
 	 @ManyToOne
 		private Enseignant enseignant;
-	 @Transient
-	 private Long enseignant_id;
+	
 	 @ManyToOne
 		private TypeCour typecour;
-	 @Transient
-	 private Long typecour_id;
+	
 	 
 	 @JsonIgnore
 	 @ManyToMany(mappedBy = "cours", fetch = FetchType.LAZY, cascade = CascadeType.ALL)

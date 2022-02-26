@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiOperation;
 
 @Api(description = "Gestion des Cours")
 @RestController
-@CrossOrigin(origins="http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000")
 public class CourRestController {
 
 	@Autowired
@@ -51,8 +51,7 @@ public class CourRestController {
 	public Cour createCour(@RequestBody Cour cour) {
 		return courService.saveCour(cour);
 	}
-	
-	
+
 	@ApiOperation(value = "Modifier un cours selon son id")
 	@RequestMapping(value = "/Cours/{id}", method = RequestMethod.PUT)
 	public Cour updateCour(@PathVariable("id") final Long id, @RequestBody Cour cour) {
@@ -96,19 +95,19 @@ public class CourRestController {
 	public List<Cour> findByEnseignantId(@PathVariable("id") Long id) {
 		return courService.findByEnseignantId(id);
 	}
-  
+
 	@ApiOperation(value = "Affiche la liste de cours contenant un cercain critére")
 	@RequestMapping(value = "Cours/Libelle/{libelle}", method = RequestMethod.GET)
 	public List<Cour> findByLibelleContains(@PathVariable("libelle") String libelle) {
 		return courService.findByLibelleContains(libelle);
 	}
-	
+
 	@ApiOperation(value = "Affiche la liste de cours selon l'id de la formation selectionnée")
 	@RequestMapping(value = "Cours/Formations/{id}", method = RequestMethod.GET)
 	public List<Cour> findByFormationsId(@PathVariable("id") Long id) {
 		return courService.findByFormationsId(id);
 	}
-	
+
 	@ApiOperation(value = "Affiche la liste de cours selon le nom de la formation")
 	@RequestMapping(value = "Cours/Formations/{nom}", method = RequestMethod.GET)
 	public List<Cour> findByFormationsNomFormation(@PathVariable("nom") String nom) {

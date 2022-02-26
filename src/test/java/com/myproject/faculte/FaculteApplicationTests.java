@@ -39,6 +39,8 @@ class FaculteApplicationTests {
 				"contactuel",null,null);
 		enseignantRepository.save(ens);
 	}
+	
+	
 
 	// methode de test pour chercher un enseignant
 	@Test
