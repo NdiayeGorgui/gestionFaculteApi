@@ -1,7 +1,5 @@
 package com.myproject.faculte.model;
 
-
-
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.List;
@@ -34,21 +32,17 @@ import lombok.NoArgsConstructor;
 public class Groupe {
 
 	@Id
-	 @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	// @Column(name="id_groupe")
-	 private Long id;
-	 private String numeroGroupe;
-	 @ManyToOne
-		private Formation formation;
-	 
-	 @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	    @JoinTable(name = "enseignants_groupes",
-	            joinColumns = {
-	                    @JoinColumn(name = "groupe_id", referencedColumnName = "id",
-	                            nullable = false, updatable = false)},
-	            inverseJoinColumns = {
-	                    @JoinColumn(name = "enseignant_id", referencedColumnName = "id",
-	                            nullable = false, updatable = false)})
-	 @JsonIgnore
-	 private Set<Enseignant> enseignants = new HashSet<>();
+	private Long id;
+	private String numeroGroupe;
+	@ManyToOne
+	private Formation formation;
+
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinTable(name = "enseignants_groupes", joinColumns = {
+			@JoinColumn(name = "groupe_id", referencedColumnName = "id", nullable = false, updatable = false) }, inverseJoinColumns = {
+					@JoinColumn(name = "enseignant_id", referencedColumnName = "id", nullable = false, updatable = false) })
+	@JsonIgnore
+	private Set<Enseignant> enseignants = new HashSet<>();
 }

@@ -14,7 +14,7 @@ import org.springframework.boot.web.server.LocalServerPort;
 import com.myproject.faculte.model.Cour;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class CoursIntegrationTest {
+public class CoursControllerIntegrationTest {
 	@LocalServerPort
 	private int port;
 
@@ -59,28 +59,27 @@ public class CoursIntegrationTest {
 
 	@Test
 	public void updateCoursByIdTest() {
-		Cour cours = new Cour();
-		cours.setId(58L);
-		cours.setLibelle("Bases de données Oracle");
-		cours.setNbeHeure(55);
+		Cour cours = testRestTemplate.getForObject("http://localhost:" + port + "/api/Cours/58", Cour.class);
+		
+		cours.setLibelle("Base de données Oracle");
+		cours.setNbeHeure(54);
 
 		testRestTemplate.put("http://localhost:" + port + "/api/Cours/58", cours, Cour.class);
 
 		Assertions.assertNotNull(cours.getId());
 		Assertions.assertEquals(58, cours.getId());
-		Assertions.assertEquals("Bases de données Oracle", cours.getLibelle());
-		Assertions.assertEquals(55, cours.getNbeHeure());
+		Assertions.assertEquals("Base de données Oracle", cours.getLibelle());
+		Assertions.assertEquals(54, cours.getNbeHeure());
 
 	}
 
 	@Test
 	public void deleteCoursByIdTest() throws Exception {
-		Cour cours = new Cour();
-		cours.setId(76L);
+		Cour cours = testRestTemplate.getForObject("http://localhost:" + port + "/api/Cours/77", Cour.class);
 
-		testRestTemplate.delete("http://localhost:" + port + "/api/Cours/76", cours, Cour.class);
+		testRestTemplate.delete("http://localhost:" + port + "/api/Cours/77", cours, Cour.class);
 
-		Assertions.assertEquals(76, cours.getId());
+		Assertions.assertEquals(77, cours.getId());
 
 	}
 }

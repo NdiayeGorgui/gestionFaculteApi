@@ -106,6 +106,7 @@ public class CoursJpaTest {
 		cours1.setLibelle("anglais");
 		Cour coursUdated = courService.saveCour(cours1);
 
+
 		Assertions.assertThat(coursUdated.getLibelle()).isEqualTo("anglais");
 
 	}
