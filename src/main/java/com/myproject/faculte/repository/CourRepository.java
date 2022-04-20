@@ -26,5 +26,7 @@ public interface CourRepository extends JpaRepository<Cour, Long> {
 
 	// liste des cours pour une formation selon le nom de la formation
 	List<Cour> findByFormationsNomFormation(String nom);
+	//chercher un cours suivant son libelle
+	Cour findBylibelle(String libelle);
 
 }

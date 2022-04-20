@@ -1,6 +1,7 @@
 package com.myproject.faculte.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -16,9 +17,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -34,6 +33,7 @@ public class Formation {
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	// @Column(name="code_formation")
 	 private Long id;
+	 @Column(unique = true)
 	 private String nomFormation;
 	 private double duree;
 	 private String annee;
@@ -52,5 +52,5 @@ public class Formation {
 		                    @JoinColumn(name = "cours_id", referencedColumnName = "id",
 		                            nullable = false, updatable = false)})
 		 @JsonIgnore
-		 private Set<Cour> cours = new HashSet<>();
+		 private List<Cour> cours = new ArrayList<>();
 }

@@ -3,6 +3,8 @@ package com.myproject.faculte.restcontroller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,7 +23,7 @@ import io.swagger.annotations.ApiOperation;
 
 @Api(description = "Gestion des Cours")
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:4200")
 public class CourRestController {
 
 	@Autowired
@@ -51,6 +53,27 @@ public class CourRestController {
 	public Cour createCour(@RequestBody Cour cour) {
 		return courService.saveCour(cour);
 	}
+	
+	 @ApiOperation(value = "Affecter un cours à une formation")
+	  
+	  @RequestMapping(value = "/Cours/addCoursToFormation/{libelle}/{formation}", method = RequestMethod.GET)
+	  public void addEnseignantToGroupe(@PathVariable("libelle") String libelle,@PathVariable("formation") String formation) {
+		 courService.addCoursToFormation(libelle,formation);
+	  }
+	 
+	 @ApiOperation(value = "Enregistrer un nouveau cours et l'affecter automatiquement à une formation")
+	  
+	  @RequestMapping(value = "/Cours/saveCoursWithFormation/{formation}", method = RequestMethod.POST)
+	  public void saveCoursWithFormation(@Valid @RequestBody Cour cours,@PathVariable("formation") String formation) {
+		 courService.saveCoursWithFormation(cours,formation);
+	  }
+	 
+	 @ApiOperation(value = "Supprimer un cours d'une formation")
+	  
+	  @RequestMapping(value = "/Cours/deleteCoursToFormation/{libelle}/{formation}", method = RequestMethod.DELETE)
+	  public void deleteCoursToFormation(@PathVariable("libelle") String libelle,@PathVariable("formation") String formation) {
+		 courService.deleteCoursToFormation(libelle,formation);
+	  }
 
 	@ApiOperation(value = "Modifier un cours selon son id")
 	@RequestMapping(value = "/Cours/{id}", method = RequestMethod.PUT)
@@ -109,7 +132,7 @@ public class CourRestController {
 	}
 
 	@ApiOperation(value = "Affiche la liste de cours selon le nom de la formation")
-	@RequestMapping(value = "Cours/Formations/{nom}", method = RequestMethod.GET)
+	@RequestMapping(value = "Cours/FormationName/{nom}", method = RequestMethod.GET)
 	public List<Cour> findByFormationsNomFormation(@PathVariable("nom") String nom) {
 		return courService.findByFormationsNomFormation(nom);
 	}

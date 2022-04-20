@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.myproject.faculte.exception.IdIntrouvableExecption;
 import com.myproject.faculte.model.Enseignant;
+import com.myproject.faculte.model.Groupe;
 import com.myproject.faculte.service.EnseignantService;
 
 import io.swagger.annotations.Api;
@@ -23,7 +24,8 @@ import io.swagger.annotations.ApiOperation;
 @Api(description = "Gestion des Enseignants")
 @RestController
 //@RequestMapping("/api")
-@CrossOrigin(origins="http://localhost:3000")
+@CrossOrigin(origins="http://localhost:4200")
+
 
 public class EnseignantRestController {
 
@@ -57,7 +59,28 @@ public class EnseignantRestController {
 	public Enseignant createEnseignant(@Valid @RequestBody Enseignant enseignant) {
 		return enseignantService.saveEnseignant(enseignant);
 	}
-
+	
+	
+	  @ApiOperation(value = "Affecter un Enseignant à un groupe")
+	  
+	  @RequestMapping(value = "/Enseignants/addEnseignantToGroupe/{mail}/{groupe}", method = RequestMethod.GET)
+	  public void addEnseignantToGroupe(@PathVariable("mail") String mail,@PathVariable("groupe") String groupe) {
+	  enseignantService.addEnseignantToGroupe(mail,groupe);
+	  }
+	  
+	  @ApiOperation(value = "Enregistrer un nouveau Enseignant et l'affecter automatiquement à un groupe")
+	  
+	  @RequestMapping(value = "/Enseignants/saveEnseignantWihtGroupe/{groupe}", method = RequestMethod.POST)
+	  public void  saveEnseignantWihtGroupe(@Valid @RequestBody Enseignant enseignant,@PathVariable("groupe") String groupe) {
+	  enseignantService.saveEnseignantWihtGroupe(enseignant,groupe);
+	  }
+	 
+	  @ApiOperation(value = "Supprimer un Enseignant d'un groupe")
+	  
+	  @RequestMapping(value = "/Enseignants/deleteEnseignantToGroupe/{mail}/{groupe}", method = RequestMethod.DELETE)
+	  public void deleteEnseignantToGroupe(@PathVariable("mail") String mail,@PathVariable("groupe") String groupe) {
+	  enseignantService.deleteEnseignantToGroupe(mail,groupe);
+	  }
 	/*
 	 * @RequestMapping(value = "/Enseignants",method = RequestMethod.PUT) public
 	 * Enseignant updateEnseignant(@RequestBody Enseignant enseignant) { return
@@ -131,7 +154,7 @@ public class EnseignantRestController {
 	
 
 	@ApiOperation(value = "Affiche la liste des Enseignants par ordre alphabétique suivant les noms")
-	@RequestMapping(value = "Trier/Enseignants", method = RequestMethod.GET)
+	@RequestMapping(value = "/Enseignants/Trier", method = RequestMethod.GET)
 	public List<Enseignant> findByOrderByLastNameAsc() {
 		return enseignantService.findByOrderByLastNameAsc();
 	}

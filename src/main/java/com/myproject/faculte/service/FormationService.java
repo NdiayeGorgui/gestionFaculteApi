@@ -17,6 +17,8 @@ public interface FormationService {
 	void deleteFormation(Formation f);
 
 	void deleteFormationById(Long id);
+	
+	Formation finfFormationByNomFormation(String nomFormation);
 
 	Optional<Formation>  getFormation(Long id);
 

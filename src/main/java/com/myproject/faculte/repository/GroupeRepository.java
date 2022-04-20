@@ -22,4 +22,6 @@ public interface GroupeRepository extends JpaRepository<Groupe, Long> {
 
 	// la liste des groupes selon l'id d'un enseignant
 	List<Groupe> findByEnseignantsId(Long id);
+	
+	Groupe findBynumeroGroupe(String numeroGroupe);
 }

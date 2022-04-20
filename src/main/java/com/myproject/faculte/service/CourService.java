@@ -14,7 +14,10 @@ public interface CourService {
 	void deleteCour(Cour c);
 
 	void deleteCourById(Long id);
-
+	Cour findCourByLibelle(String libelle);
+	void addCoursToFormation(String libelle,String nomFormation); 
+	void saveCoursWithFormation(Cour cours,String nomFormation); 
+	 void deleteCoursToFormation(String libelle, String nomFormation);
 	Optional<Cour> getCour(Long id);
 
 	List<Cour> getAllCours();

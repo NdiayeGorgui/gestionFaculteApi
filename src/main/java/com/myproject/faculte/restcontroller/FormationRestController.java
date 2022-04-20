@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiOperation;
 @Api(description = "Gestion des Formations")
 @RestController
 //@RequestMapping("/api")
-@CrossOrigin(origins="http://localhost:3000")
+@CrossOrigin(origins="http://localhost:4200")
 public class FormationRestController {
 
 	@Autowired

@@ -1,6 +1,7 @@
 package com.myproject.faculte.model;
 
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -45,6 +46,7 @@ public class Enseignant  {
 	 private String adress;
 	 
 	@Email(message = "L'adresse Email saisie est invalide")
+	@Column(unique = true)
 	 private String mail;
 	 @Length(min = 10, max = 25, message = "Nombre de caracteres entre 10 et 25")
 	 private String telephone;
@@ -52,12 +54,12 @@ public class Enseignant  {
 	
 	 
 	 @JsonIgnore
-		@OneToMany(mappedBy = "enseignant",cascade = CascadeType.ALL)
+		@OneToMany(mappedBy = "enseignant")
 		private List<Cour> cours;
 	 
 	 @JsonIgnore
-	 @ManyToMany(mappedBy = "enseignants", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-	 private Set<Groupe> groupes = new HashSet<>();
+	 @ManyToMany(mappedBy = "enseignants", fetch = FetchType.EAGER)
+	 private List<Groupe> groupes = new ArrayList<>();
 
 
 		

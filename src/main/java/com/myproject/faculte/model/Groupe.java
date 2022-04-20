@@ -1,6 +1,7 @@
 package com.myproject.faculte.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -35,14 +36,15 @@ public class Groupe {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	// @Column(name="id_groupe")
 	private Long id;
+	 @Column(unique = true)
 	private String numeroGroupe;
 	@ManyToOne
 	private Formation formation;
 
-	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "enseignants_groupes", joinColumns = {
 			@JoinColumn(name = "groupe_id", referencedColumnName = "id", nullable = false, updatable = false) }, inverseJoinColumns = {
 					@JoinColumn(name = "enseignant_id", referencedColumnName = "id", nullable = false, updatable = false) })
 	@JsonIgnore
-	private Set<Enseignant> enseignants = new HashSet<>();
+	private List<Enseignant> enseignants = new ArrayList<>();
 }

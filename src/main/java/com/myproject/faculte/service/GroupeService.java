@@ -12,6 +12,7 @@ public interface GroupeService {
 	Groupe saveGroupe(Groupe g);
 
 	Groupe updateGroupe(Groupe g);
+	Groupe findGroupeByNumeroGroupe(String numeroGroupe);
 
 	void deleteGroupe(Groupe g);
 

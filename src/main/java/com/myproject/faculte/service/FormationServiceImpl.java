@@ -70,4 +70,10 @@ public class FormationServiceImpl implements FormationService {
 		return formationRepository.findByNomFormationContains(nom);
 	}
 
+	@Override
+	public Formation finfFormationByNomFormation(String nomFormation) {
+		return formationRepository.findByNomFormation(nomFormation);
+		
+	}
+
 }

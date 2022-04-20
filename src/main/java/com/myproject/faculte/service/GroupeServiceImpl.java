@@ -78,4 +78,10 @@ public class GroupeServiceImpl implements GroupeService {
 		return groupeRepository.findByNumeroGroupe(numero);
 	}
 
+	@Override
+	public Groupe findGroupeByNumeroGroupe(String numeroGroupe) {
+		
+		return groupeRepository.findBynumeroGroupe(numeroGroupe);
+	}
+
 }

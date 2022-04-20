@@ -47,6 +47,6 @@ public interface EnseignantRepository extends JpaRepository<Enseignant, Long> {
 	//la liste des enseignant pour un groupe
 	 List<Enseignant> findByGroupesId(Long id);
 	 
-	
+	 Enseignant findByMail(String mail);
 	
 }

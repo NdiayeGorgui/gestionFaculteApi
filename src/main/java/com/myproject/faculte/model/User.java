@@ -30,10 +30,11 @@ import lombok.ToString;
 @Table(name = "users")
 public class User {
 	 @Id
-	 private String userId;
+	 @GeneratedValue(strategy = GenerationType.IDENTITY)
+	 private Long userId;
 	 @Column(unique = true,length = 20)  //username est unique
 	 private String userName;
-	 @JsonProperty(access = Access.WRITE_ONLY)
+	//@JsonProperty(access = Access.WRITE_ONLY)
 	 private String password;
 	 @ManyToMany(mappedBy = "users",fetch = FetchType.EAGER)  //eager veut dire a chaque fois qu'il charge un user il charge automatiqment les users de ce role
 	 private List<Role> roles=new ArrayList<>();    //on initialise avec arraylist pour eviter un nullpointer au cas ou on associe un role a un user qui n'a pas de role

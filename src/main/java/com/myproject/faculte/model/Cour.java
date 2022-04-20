@@ -1,7 +1,9 @@
 package com.myproject.faculte.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -35,6 +37,7 @@ public class Cour {
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	// @Column(name="code_cours")
 	 private Long id;
+	 @Column(unique = true)
 	 private String libelle;
 	 private double nbeHeure;
 	 
@@ -47,5 +50,5 @@ public class Cour {
 	 
 	 @JsonIgnore
 	 @ManyToMany(mappedBy = "cours", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	 private Set<Formation> formations= new HashSet<>();
+	 private List<Formation> formations= new ArrayList<>();
 }

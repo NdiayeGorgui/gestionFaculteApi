@@ -1,6 +1,7 @@
 package com.myproject.faculte.service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 
@@ -22,12 +23,11 @@ public class UserServiceImpl implements UserService{
 
 	private UserRepository userRepository;
 	private RoleRepository roleRepository;
-	
 
 	@Override
 	public User addNewUser(User user) {
 		//todo hacher le pwd
-		user.setUserId(UUID.randomUUID().toString());
+		//user.setUserId(UUID.randomUUID().toString());
 		return userRepository.save(user);
 	}
 
@@ -72,5 +72,81 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public List<User> getAllUsers() {
 		return userRepository.findAll();
+	}
+
+	@Override
+	public List<Role> getAllRoles() {
+		
+		return roleRepository.findAll();
+	}
+
+	
+
+	@Override
+	public void deleteRoleToUser(String userName, String roleName) {
+		User user=findUserByUserName(userName);
+		Role role=findRoleByRoleName(roleName);
+		if(user.getRoles()!=null) {
+			user.getRoles().remove(role); 
+			
+		}
+		if(role.getUsers()!=null) {
+			role.getUsers().remove(user);  
+		}
+	}
+
+	@Override
+	public void  saveUserWihtRole(User user, String roleName) {
+		User usr=addNewUser(user);
+		Role role=findRoleByRoleName(roleName);
+		if(usr.getRoles()!=null) {
+			usr.getRoles().add(role); 
+		}
+		if(role.getUsers()!=null) {
+			role.getUsers().add(usr);  
+		}
+					
+	}
+
+	
+
+	@Override
+	public void deleteRoleById(Long id) {
+		roleRepository.deleteById(id);
+		
+	}
+
+	@Override
+	public Optional<Role> getRole(Long id) {
+		return roleRepository.findById(id);
+	}
+
+	@Override
+	public User updateUser(User user) {
+		return userRepository.save(user);
+	}
+
+	@Override
+	public Optional<User> getUserByUserName(String userName) {
+		
+		return Optional.ofNullable(userRepository.findByUserName(userName));
+	}
+
+	@Override
+	public void deleteUserById(Long id) {
+		userRepository.deleteById(id);
+		
+	}
+
+	@Override
+	public User findUserByUserId(Long userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Optional<User> getUser(Long id) {
+		
+		return userRepository.findById(id);
 	}
 }
