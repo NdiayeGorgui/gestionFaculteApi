@@ -49,7 +49,7 @@ public class UserRestController {
 		if (user.isPresent()) {
 			return user.get();
 		} else {
-			throw new IdIntrouvableExecption("Le type de Cours avec l'id " + id + " n'existe pas");
+			throw new IdIntrouvableExecption("Le user avec l'id " + id + " n'existe pas");
 		}
 	}
 
@@ -114,6 +114,16 @@ public class UserRestController {
 		return role;
 
 	}
+	@ApiOperation(value = "Récupère un un role selon son id")
+	@RequestMapping(value = "Roles/Role/{id}", method = RequestMethod.GET)
+	public Role getRoleById(@PathVariable("id") final Long id) throws IdIntrouvableExecption {
+		Optional<Role> role = userService.getRole(id);
+		if (role.isPresent()) {
+			return role.get();
+		} else {
+			throw new IdIntrouvableExecption("Le role avec l'id " + id + " n'existe pas");
+		}
+	}
 	
 	@ApiOperation(value = "Supprimer un role selon son id")
 	@RequestMapping(value = "Roles/{id}", method = RequestMethod.DELETE)
@@ -142,7 +152,7 @@ public class UserRestController {
 	}
 	
 	@ApiOperation(value = "Ajoute un role à un utilisateur")
-	@RequestMapping(value = "Users/addRoleToUser/{userName}/{roleName}", method = RequestMethod.GET)
+	@RequestMapping(value = "Users/addRoleToUser/{userName}/{roleName}", method = RequestMethod.POST)
 	public void addRoleToUser(@PathVariable("userName") String userName, @PathVariable("roleName") String roleName) {
 	
 		userService.addRoleToUser(userName, roleName);

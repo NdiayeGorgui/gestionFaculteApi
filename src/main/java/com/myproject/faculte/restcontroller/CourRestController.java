@@ -56,7 +56,7 @@ public class CourRestController {
 	
 	 @ApiOperation(value = "Affecter un cours à une formation")
 	  
-	  @RequestMapping(value = "/Cours/addCoursToFormation/{libelle}/{formation}", method = RequestMethod.GET)
+	  @RequestMapping(value = "/Cours/addCoursToFormation/{libelle}/{formation}", method = RequestMethod.POST)
 	  public void addEnseignantToGroupe(@PathVariable("libelle") String libelle,@PathVariable("formation") String formation) {
 		 courService.addCoursToFormation(libelle,formation);
 	  }

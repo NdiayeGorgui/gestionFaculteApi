@@ -63,7 +63,7 @@ public class EnseignantRestController {
 	
 	  @ApiOperation(value = "Affecter un Enseignant à un groupe")
 	  
-	  @RequestMapping(value = "/Enseignants/addEnseignantToGroupe/{mail}/{groupe}", method = RequestMethod.GET)
+	  @RequestMapping(value = "/Enseignants/addEnseignantToGroupe/{mail}/{groupe}", method = RequestMethod.POST)
 	  public void addEnseignantToGroupe(@PathVariable("mail") String mail,@PathVariable("groupe") String groupe) {
 	  enseignantService.addEnseignantToGroupe(mail,groupe);
 	  }

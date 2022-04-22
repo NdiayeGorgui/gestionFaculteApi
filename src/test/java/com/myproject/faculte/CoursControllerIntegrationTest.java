@@ -33,7 +33,7 @@ public class CoursControllerIntegrationTest {
 
 	@Test
 	public void getCoursByIdTest() {
-		Cour cours = testRestTemplate.getForObject("http://localhost:" + port + "/api/Cours/58", Cour.class);
+		Cour cours = testRestTemplate.getForObject("http://localhost:" + port + "/api/Cours/59", Cour.class);
 
 		Assertions.assertNotNull(cours.getId());
 		Assertions.assertEquals(58, cours.getId());

@@ -8,5 +8,5 @@ import com.myproject.faculte.model.User;
 public interface UserRepository extends JpaRepository<User, Long>{
 	User findByUserName(String userName);
 	User findByUserId(Long userId);
-
+	
 }
