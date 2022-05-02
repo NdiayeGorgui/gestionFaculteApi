@@ -139,14 +139,26 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public User findUserByUserId(Long userId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public Optional<User> getUser(Long id) {
 		
 		return userRepository.findById(id);
+	}
+
+	@Override
+	public List<User> findByRolesId(Long id) {
+		
+		return userRepository.findByRolesId(id);
+	}
+
+	@Override
+	public List<Role> findByUsersUserId(Long userId) {
+	
+		return roleRepository.findByUsersUserId(userId);
+	}
+
+	@Override
+	public List<Role> findByUsersUserName(String userName) {
+		
+		return roleRepository.findByUsersUserName(userName);
 	}
 }

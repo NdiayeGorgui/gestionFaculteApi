@@ -21,10 +21,11 @@ public interface UserService {
 	List<Role> getAllRoles();
 	void deleteRoleById(Long id);
 	void deleteUserById(Long id);
-	User findUserByUserId(Long userId);
 	Optional<User>  getUserByUserName(String userName);
 	Optional<User>  getUser(Long id);
 	Optional<Role>  getRole(Long id);
-
+	List<User> findByRolesId(Long id);
+	List<Role>findByUsersUserId(Long userId);
+	List<Role>findByUsersUserName(String userName);
 
 }

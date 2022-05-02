@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -34,6 +35,7 @@ public class Role {
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	 @Column(unique = true,length = 20)
+	 @NotNull
 	private String roleName;
 	 @ManyToMany(fetch = FetchType.EAGER)
 	 //@JoinTable(name="users_roles")

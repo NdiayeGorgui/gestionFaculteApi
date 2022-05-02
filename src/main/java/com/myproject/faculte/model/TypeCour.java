@@ -32,7 +32,7 @@ public class TypeCour  {
 	 private double prix;
 	 
 	 @JsonIgnore
-		@OneToMany(mappedBy = "typecour",cascade = CascadeType.ALL)
+		@OneToMany(mappedBy = "typecour")
 		private List<Cour> cours;
 }
 

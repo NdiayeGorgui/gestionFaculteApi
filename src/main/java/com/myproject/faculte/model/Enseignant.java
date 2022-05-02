@@ -37,10 +37,10 @@ public class Enseignant  {
 	// @Column(name="code_enseignant")
 	 private Long id;
 	 
-	 @Length(min = 3, max = 20, message = "Nombre de caracteres entre 3 et 20")
+	 @Length(min = 2, max = 20, message = "Nombre de caracteres entre 2 et 20")
 	 @Column(name="first_name")
 	 private String firstName;
-	 @Length(min = 3, max = 20, message = "Nombre de caracteres entre 3 et 20")
+	 @Length(min = 2, max = 20, message = "Nombre de caracteres entre 2 et 20")
 	 @Column(name="last_name")
 	 private String lastName;
 	 private String adress;

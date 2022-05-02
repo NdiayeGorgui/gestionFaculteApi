@@ -174,5 +174,21 @@ public class UserRestController {
 		userService.saveUserWihtRole(user, roleName);
 
 	}
+	@ApiOperation(value = "Affiche la liste des  Users  pour un role selon son id")
+	@RequestMapping(value = "/Users/Role/{id}", method = RequestMethod.GET)
+	public List<User> findByRolesId(@PathVariable("id") Long id) {
+		return userService.findByRolesId(id);
+	}
+	@ApiOperation(value = "Affiche la liste des  Users  pour un role selon son nom")
+	@RequestMapping(value = "/Users/Role/UserName/{userName}", method = RequestMethod.GET)
+	public List<Role> findByRolesId(@PathVariable("userName") String userName) {
+		return userService.findByUsersUserName(userName);
+	}
+	
+	@ApiOperation(value = "Affiche la liste des  Roles  pour un user selon son id")
+	@RequestMapping(value = "/Roles/User/{id}", method = RequestMethod.GET)
+	public List<Role> findByUsersUserId(@PathVariable("id") Long id) {
+		return userService.findByUsersUserId(id);
+	}
 
 }

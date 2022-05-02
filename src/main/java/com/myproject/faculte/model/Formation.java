@@ -43,7 +43,7 @@ public class Formation {
 		@JsonIgnore
 		private List<Groupe> groupes;
 		
-		 @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+		 @ManyToMany(fetch = FetchType.LAZY)
 		    @JoinTable(name = "cours_formations",
 		            joinColumns = {
 		                    @JoinColumn(name = "formation_id", referencedColumnName = "id",

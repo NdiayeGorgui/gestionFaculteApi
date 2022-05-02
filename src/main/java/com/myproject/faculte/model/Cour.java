@@ -49,6 +49,6 @@ public class Cour {
 	
 	 
 	 @JsonIgnore
-	 @ManyToMany(mappedBy = "cours", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	 @ManyToMany(mappedBy = "cours", fetch = FetchType.LAZY)
 	 private List<Formation> formations= new ArrayList<>();
 }
