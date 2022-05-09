@@ -18,6 +18,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
@@ -37,6 +40,7 @@ public class Cour {
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	// @Column(name="code_cours")
 	 private Long id;
+	 @NotBlank
 	 @Column(unique = true)
 	 private String libelle;
 	 private double nbeHeure;

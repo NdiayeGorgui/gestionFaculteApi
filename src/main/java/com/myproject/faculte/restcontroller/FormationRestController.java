@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.myproject.faculte.exception.IdIntrouvableExecption;
+import com.myproject.faculte.exception.ResourceNotFoundException;
 import com.myproject.faculte.model.Cour;
 import com.myproject.faculte.model.Formation;
 import com.myproject.faculte.service.FormationService;
@@ -36,12 +36,12 @@ public class FormationRestController {
 
 	@ApiOperation(value = "Récupère une formation selon son id")
 	@RequestMapping(value = "Formations/{id}", method = RequestMethod.GET)
-	public Formation getFormation(@PathVariable("id") final Long id) throws IdIntrouvableExecption {
+	public Formation getFormation(@PathVariable("id") final Long id) throws ResourceNotFoundException {
 		Optional<Formation> formation = formationService.getFormation(id);
 		if (formation.isPresent()) {
 			return formation.get();
 		} else {
-			throw new IdIntrouvableExecption("La formation avec l'id " + id + " n'existe pas");
+			throw new ResourceNotFoundException("La formation avec l'id " + id + " n'existe pas");
 		}
 	}
 
@@ -53,7 +53,7 @@ public class FormationRestController {
 
 	@ApiOperation(value = "Modifier une formation selon son id")
 	@RequestMapping(value = "/Formations/{id}", method = RequestMethod.PUT)
-	public Formation updateFormation(@PathVariable("id") final Long id, @RequestBody Formation formation) {
+	public Formation updateFormation(@PathVariable("id") final Long id, @RequestBody Formation formation) throws ResourceNotFoundException {
 		Optional<Formation> f = formationService.getFormation(id);
 		if (f.isPresent()) {
 			Formation currentFormation = f.get();
@@ -75,14 +75,19 @@ public class FormationRestController {
 			formationService.saveFormation(currentFormation);
 			return currentFormation;
 		} else {
-			return null;
+			throw new ResourceNotFoundException("La formation avec l'id " + id + " n'existe pas");
 		}
 	}
 
 	@ApiOperation(value = "Supprimer une formation selon son id")
 	@RequestMapping(value = "Formations/{id}", method = RequestMethod.DELETE)
-	public void deleteFormation(@PathVariable("id") Long id) {
+	public void deleteFormation(@PathVariable("id") Long id) throws ResourceNotFoundException {
+		Optional<Formation> f = formationService.getFormation(id);
+		if (f.isPresent()) {
 		formationService.deleteFormationById(id);
+		}else {
+			throw new ResourceNotFoundException("La formation avec l'id " + id + " n'existe pas");
+		}
 	}
 	
 	@ApiOperation(value = "Affiche la liste des formations où un un cours existe selon son id")

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.myproject.faculte.exception.IdIntrouvableExecption;
+import com.myproject.faculte.exception.ResourceNotFoundException;
 import com.myproject.faculte.model.TypeCour;
 import com.myproject.faculte.service.TypeCourService;
 
@@ -35,12 +35,12 @@ public class TypeCourRestController {
 
 	@ApiOperation(value = "Récupère un type de cours selon son id")
 	@RequestMapping(value = "TypeCours/{id}", method = RequestMethod.GET)
-	public TypeCour getTypeCour(@PathVariable("id") final Long id) throws IdIntrouvableExecption {
+	public TypeCour getTypeCour(@PathVariable("id") final Long id) throws ResourceNotFoundException {
 		Optional<TypeCour> typeCour = typeCourService.getTypeCour(id);
 		if (typeCour.isPresent()) {
 			return typeCour.get();
 		} else {
-			throw new IdIntrouvableExecption("Le type de Cours avec l'id " + id + " n'existe pas");
+			throw new ResourceNotFoundException("Le type de Cours avec l'id " + id + " n'existe pas");
 		}
 	}
 
@@ -52,7 +52,7 @@ public class TypeCourRestController {
 
 	@ApiOperation(value = "Modifier un type de cours selon son id")
 	@RequestMapping(value = "/TypeCours/{id}", method = RequestMethod.PUT)
-	public TypeCour updateTypeCour(@PathVariable("id") final Long id, @RequestBody TypeCour typeCour) {
+	public TypeCour updateTypeCour(@PathVariable("id") final Long id, @RequestBody TypeCour typeCour) throws ResourceNotFoundException {
 		Optional<TypeCour> tc = typeCourService.getTypeCour(id);
 		if (tc.isPresent()) {
 			TypeCour currentTypeCour = tc.get();
@@ -69,13 +69,13 @@ public class TypeCourRestController {
 			typeCourService.saveTypeCour(currentTypeCour);
 			return currentTypeCour;
 		} else {
-			return null;
+			throw new ResourceNotFoundException("Le type de Cours avec l'id " + id + " n'existe pas");
 		}
 	}
 
 	@ApiOperation(value = "Supprimer un type de cours selon son id")
 	@RequestMapping(value = "TypeCours/{id}", method = RequestMethod.DELETE)
-	public void deleteCour(@PathVariable("id") Long id) {
+	public void deleteCour(@PathVariable("id") Long id)  {
 		typeCourService.deleteTypeCourById(id);
 	}
 

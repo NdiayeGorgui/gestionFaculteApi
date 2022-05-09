@@ -13,8 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.myproject.faculte.exception.IdIntrouvableExecption;
+import com.myproject.faculte.exception.ResourceNotFoundException;
 import com.myproject.faculte.model.Enseignant;
+import com.myproject.faculte.model.EnseignantGroupe;
 import com.myproject.faculte.model.Groupe;
 import com.myproject.faculte.service.EnseignantService;
 
@@ -45,12 +46,12 @@ public class EnseignantRestController {
 	 */
 	@ApiOperation(value = "Récupère un Enseignant selon son id")
 	@RequestMapping(value = "Enseignants/{id}", method = RequestMethod.GET)
-	public Enseignant getEnseignant(@PathVariable("id") final Long id) throws IdIntrouvableExecption {
+	public Enseignant getEnseignant(@PathVariable("id") final Long id) throws ResourceNotFoundException {
 		Optional<Enseignant> enseignant = enseignantService.getEnseignant(id);
 		if (enseignant.isPresent()) {
 			return enseignant.get();
 		} else {
-			throw new IdIntrouvableExecption("L'enseignant avec l'id " + id + " n'existe pas");
+			throw new ResourceNotFoundException("L'enseignant avec l'id " + id + " n'existe pas");
 		}
 	}
 
@@ -67,6 +68,13 @@ public class EnseignantRestController {
 	  public void addEnseignantToGroupe(@PathVariable("mail") String mail,@PathVariable("groupe") String groupe) {
 	  enseignantService.addEnseignantToGroupe(mail,groupe);
 	  }
+		//autre maniéere de faire
+	  @ApiOperation(value = "Affecter un Enseignant à un groupe")
+	  
+	  @RequestMapping(value = "/Enseignants/addEnseignantToGroupe", method = RequestMethod.POST)
+	  public void addEnseignantToGroupes(@RequestBody EnseignantGroupe enseignantGroupe) {
+	  enseignantService.addEnseignantToGroupe(enseignantGroupe.getMail(),enseignantGroupe.getNumeroGroupe());
+	  }
 	  
 	  @ApiOperation(value = "Enregistrer un nouveau Enseignant et l'affecter automatiquement à un groupe")
 	  
@@ -79,6 +87,7 @@ public class EnseignantRestController {
 	  
 	  @RequestMapping(value = "/Enseignants/deleteEnseignantToGroupe/{mail}/{groupe}", method = RequestMethod.DELETE)
 	  public void deleteEnseignantToGroupe(@PathVariable("mail") String mail,@PathVariable("groupe") String groupe) {
+		  
 	  enseignantService.deleteEnseignantToGroupe(mail,groupe);
 	  }
 	/*
@@ -88,7 +97,7 @@ public class EnseignantRestController {
 	 */
 	@ApiOperation(value = "Modifier un Enseignant selon son id")
 	@RequestMapping(value = "/Enseignants/{id}", method = RequestMethod.PUT)
-	public Enseignant updateEnseignant(@PathVariable("id") final Long id, @RequestBody Enseignant enseignant) {
+	public Enseignant updateEnseignant(@PathVariable("id") final Long id, @RequestBody Enseignant enseignant) throws ResourceNotFoundException {
 		Optional<Enseignant> e = enseignantService.getEnseignant(id);
 		if (e.isPresent()) {
 			Enseignant currentEnseignant = e.get();
@@ -123,13 +132,15 @@ public class EnseignantRestController {
 			enseignantService.saveEnseignant(currentEnseignant);
 			return currentEnseignant;
 		} else {
-			return null;
+			throw new ResourceNotFoundException("L'enseignant avec l'id " + id + " n'existe pas");
+		
 		}
 	}
 
 	@ApiOperation(value = "Supprimer un Enseignant selon son id")
 	@RequestMapping(value = "Enseignants/{id}", method = RequestMethod.DELETE)
 	public void deleteEnseignant(@PathVariable("id") Long id) {
+		
 		enseignantService.deleteEnseignantById(id);
 	}
 

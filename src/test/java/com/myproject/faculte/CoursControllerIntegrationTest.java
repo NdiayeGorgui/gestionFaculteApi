@@ -27,18 +27,18 @@ public class CoursControllerIntegrationTest {
 		List<Cour> cours = testRestTemplate.getForObject("http://localhost:" + port + "/api/Cours", List.class);
 
 		Assertions.assertNotNull(cours);
-		Assertions.assertEquals(7, cours.size());
+		Assertions.assertEquals(31, cours.size());
 
 	}
 
 	@Test
 	public void getCoursByIdTest() {
-		Cour cours = testRestTemplate.getForObject("http://localhost:" + port + "/api/Cours/59", Cour.class);
+		Cour cours = testRestTemplate.getForObject("http://localhost:" + port + "/api/Cours/1", Cour.class);
 
 		Assertions.assertNotNull(cours.getId());
-		Assertions.assertEquals(58, cours.getId());
-		Assertions.assertEquals("Bases de données Oracle", cours.getLibelle());
-		Assertions.assertEquals(55, cours.getNbeHeure());
+		Assertions.assertEquals(1, cours.getId());
+		Assertions.assertEquals("Java", cours.getLibelle());
+		Assertions.assertEquals(45, cours.getNbeHeure());
 
 	}
 
@@ -75,11 +75,11 @@ public class CoursControllerIntegrationTest {
 
 	@Test
 	public void deleteCoursByIdTest() throws Exception {
-		Cour cours = testRestTemplate.getForObject("http://localhost:" + port + "/api/Cours/77", Cour.class);
+		Cour cours = testRestTemplate.getForObject("http://localhost:" + port + "/api/Cours/37", Cour.class);
 
-		testRestTemplate.delete("http://localhost:" + port + "/api/Cours/77", cours, Cour.class);
+		testRestTemplate.delete("http://localhost:" + port + "/api/Cours/37", cours, Cour.class);
 
-		Assertions.assertEquals(77, cours.getId());
+		Assertions.assertEquals(37, cours.getId());
 
 	}
 }

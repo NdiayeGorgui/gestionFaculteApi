@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import com.myproject.faculte.exception.IdIntrouvableExecption;
+
+import com.myproject.faculte.exception.ResourceNotFoundException;
 import com.myproject.faculte.model.Cour;
+import com.myproject.faculte.model.CoursFormation;
 import com.myproject.faculte.model.Enseignant;
 import com.myproject.faculte.model.TypeCour;
 import com.myproject.faculte.service.CourService;
@@ -37,13 +39,13 @@ public class CourRestController {
 
 	@ApiOperation(value = "Récupère un cours selon son id")
 	@RequestMapping(value = "Cours/{id}", method = RequestMethod.GET)
-	public Cour getCour(@PathVariable("id") final Long id) throws IdIntrouvableExecption {
+	public Cour getCour(@PathVariable("id") final Long id) throws ResourceNotFoundException {
 		Optional<Cour> cour = courService.getCour(id);
 		if (cour.isPresent()) {
 			return cour.get();
 		} else {
 
-			throw new IdIntrouvableExecption("Le Cours avec l'id " + id + " n'existe pas");
+			throw new ResourceNotFoundException("Le Cours avec l'id " + id + " n'existe pas");
 
 		}
 	}
@@ -57,9 +59,18 @@ public class CourRestController {
 	 @ApiOperation(value = "Affecter un cours à une formation")
 	  
 	  @RequestMapping(value = "/Cours/addCoursToFormation/{libelle}/{formation}", method = RequestMethod.POST)
-	  public void addEnseignantToGroupe(@PathVariable("libelle") String libelle,@PathVariable("formation") String formation) {
+	  public void addCoursToFormation(@PathVariable("libelle") String libelle,@PathVariable("formation") String formation) {
 		 courService.addCoursToFormation(libelle,formation);
 	  }
+	 
+		//autre maniéere de faire
+	 @ApiOperation(value = "Affecter un cours à une formation")
+	  
+	  @RequestMapping(value = "/Cours/addCoursToFormation", method = RequestMethod.POST)
+	  public void addCoursToFormations(@RequestBody CoursFormation coursFormation) {
+		 courService.addCoursToFormation(coursFormation.getLibelle(),coursFormation.getNomFormation());
+	  }
+	 
 	 
 	 @ApiOperation(value = "Enregistrer un nouveau cours et l'affecter automatiquement à une formation")
 	  
@@ -77,7 +88,7 @@ public class CourRestController {
 
 	@ApiOperation(value = "Modifier un cours selon son id")
 	@RequestMapping(value = "/Cours/{id}", method = RequestMethod.PUT)
-	public Cour updateCour(@PathVariable("id") final Long id, @RequestBody Cour cour) {
+	public Cour updateCour(@PathVariable("id") final Long id, @RequestBody Cour cour) throws ResourceNotFoundException {
 		Optional<Cour> c = courService.getCour(id);
 		if (c.isPresent()) {
 			Cour currentCour = c.get();
@@ -103,13 +114,14 @@ public class CourRestController {
 			courService.saveCour(currentCour);
 			return currentCour;
 		} else {
-			return null;
+			throw new ResourceNotFoundException("Le Cours avec l'id " + id + " n'existe pas");
 		}
 	}
 
 	@ApiOperation(value = "Supprimer un cours selon son id")
 	@RequestMapping(value = "Cours/{id}", method = RequestMethod.DELETE)
 	public void deleteCour(@PathVariable("id") Long id) {
+		
 		courService.deleteCourById(id);
 	}
 

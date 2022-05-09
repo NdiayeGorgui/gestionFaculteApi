@@ -13,8 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.myproject.faculte.exception.IdIntrouvableExecption;
+import com.myproject.faculte.exception.ResourceNotFoundException;
 import com.myproject.faculte.model.Role;
+import com.myproject.faculte.model.RoleUser;
 import com.myproject.faculte.model.User;
 import com.myproject.faculte.service.UserService;
 
@@ -39,17 +40,16 @@ public class UserRestController {
 	public User getUserByUserName(@PathVariable("userName") final String userName) {
 		User user = userService.findUserByUserName(userName);
 		return user;
-
 	}
 
 	@ApiOperation(value = "Récupère un un utilisateur selon son id")
 	@RequestMapping(value = "Users/User/{id}", method = RequestMethod.GET)
-	public User getUserById(@PathVariable("id") final Long id) throws IdIntrouvableExecption {
+	public User getUserById(@PathVariable("id") final Long id) throws ResourceNotFoundException {
 		Optional<User> user = userService.getUser(id);
 		if (user.isPresent()) {
 			return user.get();
 		} else {
-			throw new IdIntrouvableExecption("Le user avec l'id " + id + " n'existe pas");
+			throw new ResourceNotFoundException("Le user avec l'id " + id + " n'existe pas");
 		}
 	}
 
@@ -61,7 +61,7 @@ public class UserRestController {
 
 	@ApiOperation(value = "Modifier un user selon son id")
 	@RequestMapping(value = "Users/{id}", method = RequestMethod.PUT)
-	public User updateUser(@PathVariable("id") final Long id, @RequestBody User user) {
+	public User updateUser(@PathVariable("id") final Long id, @RequestBody User user) throws ResourceNotFoundException {
 		Optional<User> usr = userService.getUser(id);
 		if (usr.isPresent()) {
 			User currentUser = usr.get();
@@ -78,7 +78,7 @@ public class UserRestController {
 			userService.addNewUser(currentUser);
 			return currentUser;
 		} else {
-			return null;
+			throw new ResourceNotFoundException("Le user avec l'id " + id + " n'existe pas");
 		}
 	}
 	
@@ -116,24 +116,25 @@ public class UserRestController {
 	}
 	@ApiOperation(value = "Récupère un un role selon son id")
 	@RequestMapping(value = "Roles/Role/{id}", method = RequestMethod.GET)
-	public Role getRoleById(@PathVariable("id") final Long id) throws IdIntrouvableExecption {
+	public Role getRoleById(@PathVariable("id") final Long id) throws ResourceNotFoundException {
 		Optional<Role> role = userService.getRole(id);
 		if (role.isPresent()) {
 			return role.get();
 		} else {
-			throw new IdIntrouvableExecption("Le role avec l'id " + id + " n'existe pas");
+			throw new ResourceNotFoundException("Le role avec l'id " + id + " n'existe pas");
 		}
 	}
 	
 	@ApiOperation(value = "Supprimer un role selon son id")
 	@RequestMapping(value = "Roles/{id}", method = RequestMethod.DELETE)
 	public void deleteRole(@PathVariable("id") Long id) {
+		
 		userService.deleteRoleById(id);
 	}
 	
 	@ApiOperation(value = "Modifier un role selon son id")
 	@RequestMapping(value = "Roles/{id}", method = RequestMethod.PUT)
-	public Role updateRole(@PathVariable("id") final Long id, @RequestBody Role role) {
+	public Role updateRole(@PathVariable("id") final Long id, @RequestBody Role role) throws ResourceNotFoundException {
 		Optional<Role> rol = userService.getRole(id);
 		if (rol.isPresent()) {
 			Role currentRole = rol.get();
@@ -147,7 +148,7 @@ public class UserRestController {
 			userService.addNewRole(currentRole);
 			return currentRole;
 		} else {
-			return null;
+			throw new ResourceNotFoundException("Le role avec l'id " + id + " n'existe pas");
 		}
 	}
 	
@@ -156,6 +157,14 @@ public class UserRestController {
 	public void addRoleToUser(@PathVariable("userName") String userName, @PathVariable("roleName") String roleName) {
 	
 		userService.addRoleToUser(userName, roleName);
+
+	}
+	//autre maniéere de faire
+	@ApiOperation(value = "Ajoute un role à un utilisateur")
+	@RequestMapping(value = "Users/addRoleToUser", method = RequestMethod.POST)
+	public void addRoleToUserForm(@Valid @RequestBody RoleUser roleUser) {
+	
+		userService.addRoleToUser(roleUser.getUserName(), roleUser.getRoleName());
 
 	}
 	

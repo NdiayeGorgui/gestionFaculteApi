@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.myproject.faculte.exception.IdIntrouvableExecption;
+import com.myproject.faculte.exception.ResourceNotFoundException;
 import com.myproject.faculte.model.Cour;
 import com.myproject.faculte.model.Formation;
 import com.myproject.faculte.model.Groupe;
@@ -38,12 +38,12 @@ public class GroupeRestController {
 
 	@ApiOperation(value = "Récupère un groupe selon son id")
 	@RequestMapping(value = "Groupes/{id}", method = RequestMethod.GET)
-	public Groupe getGroupe(@PathVariable("id") final Long id) throws IdIntrouvableExecption {
+	public Groupe getGroupe(@PathVariable("id") final Long id) throws ResourceNotFoundException {
 		Optional<Groupe> groupe = groupeService.getGroupe(id);
 		if (groupe.isPresent()) {
 			return groupe.get();
 		} else {
-			throw new IdIntrouvableExecption("Le Groupe avec l'id " + id + " n'existe pas");
+			throw new ResourceNotFoundException("Le Groupe avec l'id " + id + " n'existe pas");
 		}
 	}
 
@@ -55,7 +55,7 @@ public class GroupeRestController {
 
 	@ApiOperation(value = "Modifier un groupe selon son id")
 	@RequestMapping(value = "/Groupes/{id}", method = RequestMethod.PUT)
-	public Groupe updateGroupe(@PathVariable("id") final Long id, @RequestBody Groupe groupe) {
+	public Groupe updateGroupe(@PathVariable("id") final Long id, @RequestBody Groupe groupe) throws ResourceNotFoundException {
 		Optional<Groupe> g = groupeService.getGroupe(id);
 		if (g.isPresent()) {
 			Groupe currentGroupe = g.get();
@@ -73,7 +73,7 @@ public class GroupeRestController {
 			groupeService.saveGroupe(currentGroupe);
 			return currentGroupe;
 		} else {
-			return null;
+			throw new ResourceNotFoundException("Le Groupe avec l'id " + id + " n'existe pas");
 		}
 	}
 
