@@ -11,6 +11,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -36,10 +37,10 @@ public class GlobalExceptionHandler {
 	return new ResponseEntity(errorDetails,HttpStatus.NOT_FOUND);
 	}
 	
-		@ExceptionHandler(EmptyResultDataAccessException.class)
-		public ResponseEntity<?> handleEmptyResultDataAccessException(EmptyResultDataAccessException execption,WebRequest request){
-			ErrorDetails errorDetails=new ErrorDetails(new Date(),execption.getMessage(),request.getDescription(false));
-		return new ResponseEntity(errorDetails,HttpStatus.NOT_FOUND);
+	@ExceptionHandler(EmptyResultDataAccessException.class)
+	public ResponseEntity<?> handleEmptyResultDataAccessException(EmptyResultDataAccessException execption,WebRequest request){
+		ErrorDetails errorDetails=new ErrorDetails(new Date(),execption.getMessage(),request.getDescription(false));
+	return new ResponseEntity(errorDetails,HttpStatus.NOT_FOUND);
 		}
 	
 	  @ExceptionHandler(ApiException.class) public ResponseEntity<?>
@@ -56,8 +57,13 @@ public class GlobalExceptionHandler {
 	 * Date(),execption.getMessage(),request.getDescription(false)); return new
 	 * ResponseEntity(errorDetails,HttpStatus.BAD_REQUEST); }
 	 */
-	
 	  
+	  
+	  @ExceptionHandler(HttpMessageNotReadableException.class)
+		public ResponseEntity<?> handleNumberHttpMessageNotReadableException(HttpMessageNotReadableException execption,WebRequest request){
+			ErrorDetails errorDetails=new ErrorDetails(new Date(),execption.getMessage(),request.getDescription(false));
+		return new ResponseEntity(errorDetails,HttpStatus.BAD_REQUEST);
+		}
 	  @ExceptionHandler(NumberFormatException.class)
 		public ResponseEntity<?> handleNumberFormatException(NumberFormatException execption,WebRequest request){
 			ErrorDetails errorDetails=new ErrorDetails(new Date(),execption.getMessage(),request.getDescription(false));
