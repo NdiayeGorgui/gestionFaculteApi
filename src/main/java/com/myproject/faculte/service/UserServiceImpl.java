@@ -7,6 +7,8 @@ import java.util.UUID;
 
 import javax.transaction.Transactional;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.myproject.faculte.model.Role;
@@ -21,13 +23,18 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor //pour faire l'injection des dépendences
 public class UserServiceImpl implements UserService{
 
+	@Autowired
 	private UserRepository userRepository;
+	@Autowired
 	private RoleRepository roleRepository;
+	@Autowired
+	BCryptPasswordEncoder passwordEncoder;
 
 	@Override
 	public User addNewUser(User user) {
 		//todo hacher le pwd
 		//user.setUserId(UUID.randomUUID().toString());
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		return userRepository.save(user);
 	}
 

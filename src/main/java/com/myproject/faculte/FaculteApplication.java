@@ -6,6 +6,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.myproject.faculte.model.Role;
 import com.myproject.faculte.model.User;
@@ -21,6 +22,8 @@ public class FaculteApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(FaculteApplication.class, args);
 	}
+	
+	
 	/*
 	 * @Bean CommandLineRunner start(UserService userService) {
 	 * 
@@ -28,12 +31,17 @@ public class FaculteApplication {
 	 * { User u=new User(); u.setUserName(user); u.setPassword("12345");
 	 * userService.addNewUser(u); });
 	 * 
-	 * Stream.of("admin", "responsable", "enseignant") .forEach(role -> { Role r=new
+	 * Stream.of("ADMIN", "RESPONSABLE", "ENSEIGNANT") .forEach(role -> { Role r=new
 	 * Role(); r.setRoleName(role); userService.addNewRole(r); });
 	 * 
-	 * userService.addRoleToUser("papi", "admin");
-	 * userService.addRoleToUser("jules", "responsable");
-	 * userService.addRoleToUser("toufah", "enseignant");
-	 * userService.addRoleToUser("gogo", "admin"); }; }
+	 * userService.addRoleToUser("papi", "ADMIN");
+	 * userService.addRoleToUser("jules", "RESPONSABLE");
+	 * userService.addRoleToUser("toufah", "ENSEIGNANT");
+	 * userService.addRoleToUser("gogo", "ADMIN"); }; }
 	 */
+	 
+	@Bean
+	BCryptPasswordEncoder getBCE() {
+	return new BCryptPasswordEncoder();
+	}
 }
