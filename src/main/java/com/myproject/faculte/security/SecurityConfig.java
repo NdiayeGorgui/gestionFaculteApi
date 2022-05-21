@@ -17,6 +17,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	UserDetailsService userDetailsService;
 	@Autowired
 	BCryptPasswordEncoder bCryptpasswordEncoder;
+	
+	
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -53,7 +55,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers(HttpMethod.PUT,"/Formations/**").hasAnyAuthority("ADMIN","RESPONSABLE");
 		http.authorizeRequests().antMatchers(HttpMethod.DELETE,"/Formations/**").hasAnyAuthority("ADMIN","RESPONSABLE");
 		
-
 		http.authorizeRequests().antMatchers(HttpMethod.GET,"/Groupes/**").hasAnyAuthority("ADMIN","RESPONSABLE","ENSEIGNANT");
 		http.authorizeRequests().antMatchers(HttpMethod.POST,"/Groupes/**").hasAnyAuthority("ADMIN","RESPONSABLE");
 		http.authorizeRequests().antMatchers(HttpMethod.PUT,"/Groupes/**").hasAnyAuthority("ADMIN","RESPONSABLE");

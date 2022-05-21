@@ -17,8 +17,15 @@ public interface CourService {
 	Cour findCourByLibelle(String libelle);
 	void addCoursToFormation(String libelle,String nomFormation); 
 	void saveCoursWithFormation(Cour cours,String nomFormation); 
-	 void deleteCoursToFormation(String libelle, String nomFormation);
+	void deleteCoursToFormation(String libelle, String nomFormation);
 	Optional<Cour> getCour(Long id);
+	double getSumNbeHeure();
+	double getSumNbeHeureByEnseignant(Long id);
+	double getSumNbeHeureSupByEnseignant(Long id);
+	double getSumNbeHeureSousServiceByEnseignant(Long id);
+	double getSumNbeHeureByStatut(String statut);
+	double getSumNbeHeureByTypecoursId(Long id);
+	
 
 	List<Cour> getAllCours();
 

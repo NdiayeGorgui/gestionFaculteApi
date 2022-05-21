@@ -148,5 +148,43 @@ public class CourRestController {
 	public List<Cour> findByFormationsNomFormation(@PathVariable("nom") String nom) {
 		return courService.findByFormationsNomFormation(nom);
 	}
+	
+	@ApiOperation(value = "Affiche le nombre total d'heures pour un type de cours")
+	@RequestMapping(value = "Cours/TypeCours/SumHours/{id}", method = RequestMethod.GET)
+	public double getSumNbeHeureByTypecoursId(@PathVariable("id") Long id) {
+		return courService.getSumNbeHeureByTypecoursId(id);
+	}
+	
+	@ApiOperation(value = "Affiche le nombre total d'heures pour un enseignant")
+	@RequestMapping(value = "Cours/Enseignants/SumHours/{id}", method = RequestMethod.GET)
+	public double getSumNbeHeureByEnseignant(@PathVariable("id") Long id) {
+		return courService.getSumNbeHeureByEnseignant(id);
+	}
+	
+	@ApiOperation(value = "Affiche le nombre total d'heures par statut")
+	@RequestMapping(value = "Cours/Enseignants/Statut/SumHours/{statut}", method = RequestMethod.GET)
+	public double getSumNbeHeureByStatut(@PathVariable("statut") String statut) {
+		return courService.getSumNbeHeureByStatut(statut);
+	}
+	
+	@ApiOperation(value = "Affiche les heures sup pour un enseignant")
+	@RequestMapping(value = "Cours/Enseignants/HeureSup/SumHours/{id}", method = RequestMethod.GET)
+	public double getSumNbeHeureSupByStatut(@PathVariable("id") Long id) {
+		return courService.getSumNbeHeureSupByEnseignant(id);
+	}
+	
+	@ApiOperation(value = "Affiche les heures sous service pour un enseignant")
+	@RequestMapping(value = "Cours/Enseignants/HeureSousService/SumHours/{id}", method = RequestMethod.GET)
+	public double getSumNbeHeureSousServiceByEnseignant(@PathVariable("id") Long id) {
+		return courService.getSumNbeHeureSousServiceByEnseignant(id);
+	}
+	
+	@ApiOperation(value = "Affiche le nombre total d'heures ")
+	@RequestMapping(value = "Cours/Enseignants/Global/SumHours", method = RequestMethod.GET)
+	public double getSumNbeHeureSupByStatut() {
+		return courService.getSumNbeHeure();
+	}
+	
+	
 
 }

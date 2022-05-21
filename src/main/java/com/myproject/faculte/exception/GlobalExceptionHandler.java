@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.ConstraintViolationException;
 
 import org.springframework.dao.DataIntegrityViolationException;
@@ -12,6 +13,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -19,6 +21,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
+
+import com.auth0.jwt.exceptions.JWTDecodeException;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
@@ -88,12 +92,15 @@ public class GlobalExceptionHandler {
 	}
 	
 	
+	
 	  @ExceptionHandler(MethodArgumentNotValidException.class) public
 	  ResponseEntity<?>
 	  handleMethodArgumentNotValidException(MethodArgumentNotValidException execption,WebRequest request){
 		  ErrorDetails errorDetails=new ErrorDetails(new Date(),execption.getMessage(),request.getDescription(false)); 
 		  return new ResponseEntity(errorDetails,HttpStatus.BAD_REQUEST);
 		  }
+	
+	 
 	 
 	/*
 	 * @ResponseStatus(HttpStatus.BAD_REQUEST)
@@ -105,11 +112,21 @@ public class GlobalExceptionHandler {
 	 * errMap.put(error.getField(), error.getDefaultMessage()); }); return errMap; }
 	 */
 	
+	  @ExceptionHandler(AccessDeniedException.class)
+	  public ResponseEntity<?>handleAccessDeniedException(AccessDeniedException e, WebRequest request){
+			
+			ErrorResponse errorResponse=new ErrorResponse(e.getMessage());
+			return new ResponseEntity(errorResponse,HttpStatus.BAD_REQUEST);
+	    }
+	  
+	  
 	@ExceptionHandler(ConstraintViolationException.class)
 	public ResponseEntity<?> handleConstraintViolationException(ConstraintViolationException execption,WebRequest request){
 		ErrorDetails errorDetails=new ErrorDetails(new Date(),"ce champ ne peut pas être vide ou null",request.getDescription(false));
 	return new ResponseEntity(errorDetails,HttpStatus.BAD_REQUEST);
 	}
+	
+	
 	
 	//manipulation  exceptions globales
 	

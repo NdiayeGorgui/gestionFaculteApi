@@ -48,5 +48,6 @@ public interface EnseignantRepository extends JpaRepository<Enseignant, Long> {
 	 List<Enseignant> findByGroupesId(Long id);
 	 
 	 Enseignant findByMail(String mail);
+	 
 	
 }

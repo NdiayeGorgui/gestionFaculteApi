@@ -19,7 +19,7 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
 
 //cette classe verifie l'authencité du token jwt
-
+ 
 public class JWTAuthorizationFilter extends OncePerRequestFilter {
 
 	//l'objectif de cette methode elle va extraire le token du request

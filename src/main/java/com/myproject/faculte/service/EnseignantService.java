@@ -3,6 +3,8 @@ package com.myproject.faculte.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.repository.query.Param;
+
 import com.myproject.faculte.model.Cour;
 import com.myproject.faculte.model.Enseignant;
 import com.myproject.faculte.model.Groupe;
@@ -26,7 +28,6 @@ public interface EnseignantService {
 	List<Cour> findByEnseignantCours(Enseignant enseignant);
 	List<Enseignant> findByEnseignantStatut( String statut);
 	List<Enseignant> findByGroupesId(Long id);
-	//List<Enseignant> findByGroupesNumeroGroupe(String numeroGroupe);
 	List<Enseignant> findByFirstNameLastNameStatut( String value);
 	List<Enseignant> findByOrderByLastNameAsc();
 }

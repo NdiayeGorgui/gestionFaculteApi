@@ -13,7 +13,7 @@ import com.myproject.faculte.repository.FormationRepository;
 
 @Service
 public class CourServiceImpl implements CourService{
-	
+	 public  static  final  double heureCours=200;
 	@Autowired
 	CourRepository courRepository;
 	@Autowired
@@ -132,12 +132,48 @@ public class CourServiceImpl implements CourService{
 		}
 	}
 
+	@Override
+	public double getSumNbeHeureByEnseignant(Long id) {
+		
+		return courRepository.getSumNbeHeureByEnseignant(id);
+	}
+
+	@Override
+	public double getSumNbeHeureByStatut(String statut) {
 	
-	/*
-	 * @Override public List<Cour> findByTypeCourType(String type) {
-	 * 
-	 * return courRepository.findByTypeCourType(type); }
-	 */
-	 
+		return courRepository.getSumNbeHeureByStatut(statut);
+	}
+
+	@Override
+	public double getSumNbeHeureSupByEnseignant(Long id) {
+		double heureNormale=heureCours;
+		double heureSup=(courRepository.getSumNbeHeureByEnseignant(id)-heureNormale);
+		if(heureSup>0) {
+			return heureSup;
+		}
+		return 0;
+	}
+
+	@Override
+	public double getSumNbeHeure() {
+		
+		return courRepository.getSumNbeHeure() ;
+	}
+
+	@Override
+	public double getSumNbeHeureSousServiceByEnseignant(Long id) {
+		double heureNormale=heureCours;
+		double heureSup=(courRepository.getSumNbeHeureByEnseignant(id)-heureNormale);
+		if(heureSup<0) {
+			return -heureSup;
+		}
+		return 0;
+	}
+
+	@Override
+	public double getSumNbeHeureByTypecoursId(Long id) {
+		
+		return courRepository.getSumNbeHeureByTypecoursId(id);
+	}
 
 }

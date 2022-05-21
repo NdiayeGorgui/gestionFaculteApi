@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.myproject.faculte.exception.ResourceNotFoundException;
@@ -148,6 +149,12 @@ public class EnseignantRestController {
 	@RequestMapping(value = "/Enseignants/Statut/{statut}", method = RequestMethod.GET)
 	public List<Enseignant> findByEnseignantStatut(@PathVariable("statut") String statut) {
 		return enseignantService.findByEnseignantStatut(statut);
+	}
+	
+	@ApiOperation(value = "Affiche la liste des  Enseignants  selon son mail")
+	@RequestMapping(value = "/Enseignants/Mail", method = RequestMethod.GET)
+	public Enseignant findByEnseignantByMail(@RequestParam(name="mail") String mail) {
+		return enseignantService.findEnseignantByEmail(mail);
 	}
 
 	@ApiOperation(value = "Affiche la liste des  Enseignants  selon  le nom, le prénom ou le statut")
