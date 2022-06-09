@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-06-08T23:55:54.539273500Z</date>
+  <millis>1654732554539</millis>
+  <nanos>273500</nanos>
+  <sequence>102</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectDelete</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectDelete</class>
+  <method>log</method>
+  <thread>55</thread>
+  <message>Method Invoked before proceddind void com.myproject.faculte.restcontroller.TypeCourRestController.deleteTypeCours(Long)</message>
+</record>
+<record>
+  <date>2022-06-08T23:55:54.540278400Z</date>
+  <millis>1654732554540</millis>
+  <nanos>278400</nanos>
+  <sequence>103</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectDelete</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectDelete</class>
+  <method>log</method>
+  <thread>55</thread>
+  <message>Class Invoked before proceddind class com.myproject.faculte.restcontroller.TypeCourRestController</message>
+</record>
+<record>
+  <date>2022-06-08T23:55:54.540278400Z</date>
+  <millis>1654732554540</millis>
+  <nanos>278400</nanos>
+  <sequence>104</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectDelete</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectDelete</class>
+  <method>log</method>
+  <thread>55</thread>
+  <message>Method Invoked before proceddind void com.myproject.faculte.service.TypeCourServiceImpl.deleteTypeCourById(Long)</message>
+</record>
+<record>
+  <date>2022-06-08T23:55:54.540278400Z</date>
+  <millis>1654732554540</millis>
+  <nanos>278400</nanos>
+  <sequence>105</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectDelete</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectDelete</class>
+  <method>log</method>
+  <thread>55</thread>
+  <message>Class Invoked before proceddind class com.myproject.faculte.service.TypeCourServiceImpl</message>
+</record>
+<record>
+  <date>2022-06-08T23:55:54.547615600Z</date>
+  <millis>1654732554547</millis>
+  <nanos>615600</nanos>
+  <sequence>106</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectDelete</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectDelete</class>
+  <method>log</method>
+  <thread>55</thread>
+  <message>Method Invoked before proceddind void org.springframework.data.repository.CrudRepository.deleteById(Object)</message>
+</record>
+<record>
+  <date>2022-06-08T23:55:54.547615600Z</date>
+  <millis>1654732554547</millis>
+  <nanos>615600</nanos>
+  <sequence>107</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectDelete</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectDelete</class>
+  <method>log</method>
+  <thread>55</thread>
+  <message>Class Invoked before proceddind class com.sun.proxy.$Proxy155</message>
+</record>
+<record>
+  <date>2022-06-08T23:55:54.570592500Z</date>
+  <millis>1654732554570</millis>
+  <nanos>592500</nanos>
+  <sequence>108</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectDelete</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectDelete</class>
+  <method>log</method>
+  <thread>55</thread>
+  <message>Method Invoked after proceddind void org.springframework.data.repository.CrudRepository.deleteById(Object)</message>
+</record>
+<record>
+  <date>2022-06-08T23:55:54.570592500Z</date>
+  <millis>1654732554570</millis>
+  <nanos>592500</nanos>
+  <sequence>109</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectDelete</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectDelete</class>
+  <method>log</method>
+  <thread>55</thread>
+  <message>Method Invoked after proceddind class com.sun.proxy.$Proxy155</message>
+</record>
+<record>
+  <date>2022-06-08T23:55:54.570592500Z</date>
+  <millis>1654732554570</millis>
+  <nanos>592500</nanos>
+  <sequence>110</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectDelete</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectDelete</class>
+  <method>log</method>
+  <thread>55</thread>
+  <message>execution time for the method: void org.springframework.data.repository.CrudRepository.deleteById(Object) =23 ms</message>
+</record>
+<record>
+  <date>2022-06-08T23:55:54.570592500Z</date>
+  <millis>1654732554570</millis>
+  <nanos>592500</nanos>
+  <sequence>111</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectDelete</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectDelete</class>
+  <method>log</method>
+  <thread>55</thread>
+  <message>Method Invoked after proceddind void com.myproject.faculte.service.TypeCourServiceImpl.deleteTypeCourById(Long)</message>
+</record>
+<record>
+  <date>2022-06-08T23:55:54.570592500Z</date>
+  <millis>1654732554570</millis>
+  <nanos>592500</nanos>
+  <sequence>112</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectDelete</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectDelete</class>
+  <method>log</method>
+  <thread>55</thread>
+  <message>Method Invoked after proceddind class com.myproject.faculte.service.TypeCourServiceImpl</message>
+</record>
+<record>
+  <date>2022-06-08T23:55:54.570592500Z</date>
+  <millis>1654732554570</millis>
+  <nanos>592500</nanos>
+  <sequence>113</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectDelete</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectDelete</class>
+  <method>log</method>
+  <thread>55</thread>
+  <message>execution time for the method: void com.myproject.faculte.service.TypeCourServiceImpl.deleteTypeCourById(Long) =30 ms</message>
+</record>
+<record>
+  <date>2022-06-08T23:55:54.570592500Z</date>
+  <millis>1654732554570</millis>
+  <nanos>592500</nanos>
+  <sequence>114</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectDelete</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectDelete</class>
+  <method>log</method>
+  <thread>55</thread>
+  <message>Method Invoked after proceddind void com.myproject.faculte.restcontroller.TypeCourRestController.deleteTypeCours(Long)</message>
+</record>
+<record>
+  <date>2022-06-08T23:55:54.571592800Z</date>
+  <millis>1654732554571</millis>
+  <nanos>592800</nanos>
+  <sequence>115</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectDelete</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectDelete</class>
+  <method>log</method>
+  <thread>55</thread>
+  <message>Method Invoked after proceddind class com.myproject.faculte.restcontroller.TypeCourRestController</message>
+</record>
+<record>
+  <date>2022-06-08T23:55:54.571592800Z</date>
+  <millis>1654732554571</millis>
+  <nanos>592800</nanos>
+  <sequence>116</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectDelete</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectDelete</class>
+  <method>log</method>
+  <thread>55</thread>
+  <message>execution time for the method: void com.myproject.faculte.restcontroller.TypeCourRestController.deleteTypeCours(Long) =32 ms</message>
+</record>

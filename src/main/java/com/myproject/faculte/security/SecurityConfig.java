@@ -1,6 +1,9 @@
 package com.myproject.faculte.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.actuate.autoconfigure.security.servlet.EndpointRequest;
+import org.springframework.boot.actuate.endpoint.annotation.Endpoint;
+import org.springframework.boot.actuate.health.HealthEndpoint;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -32,6 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		http.authorizeRequests().antMatchers("/login").permitAll();
 		
+		http.authorizeRequests().requestMatchers(EndpointRequest.toAnyEndpoint()).hasAuthority("ADMIN").and().httpBasic();
 		http.authorizeRequests().antMatchers("/Users").hasAuthority("ADMIN");
 		http.authorizeRequests().antMatchers("/Roles").hasAuthority("ADMIN");
 		
@@ -68,9 +72,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.addFilter(new JWTAuthenticationFilter (authenticationManager())) ;
 		http.addFilterBefore(new JWTAuthorizationFilter(),UsernamePasswordAuthenticationFilter.class);//on dit a spring avant de passer au filtre UsernamePasswordAuthenticationFilter
 		                                                                                              // de commencer par JWTAuthorizationFilter()
-	
-	
-		//http.authorizeRequests().anyRequest().authenticated();
+
 		
 	}
 

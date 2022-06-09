@@ -66,21 +66,21 @@ public class EnseignantRestController {
 	  @ApiOperation(value = "Affecter un Enseignant à un groupe")
 	  
 	  @RequestMapping(value = "/Enseignants/addEnseignantToGroupe/{mail}/{groupe}", method = RequestMethod.POST)
-	  public void addEnseignantToGroupe(@PathVariable("mail") String mail,@PathVariable("groupe") String groupe) {
+	  public void createEnseignantToGroupe(@PathVariable("mail") String mail,@PathVariable("groupe") String groupe) {
 	  enseignantService.addEnseignantToGroupe(mail,groupe);
 	  }
 		//autre maniéere de faire
 	  @ApiOperation(value = "Affecter un Enseignant à un groupe")
 	  
 	  @RequestMapping(value = "/Enseignants/addEnseignantToGroupe", method = RequestMethod.POST)
-	  public void addEnseignantToGroupes(@RequestBody EnseignantGroupe enseignantGroupe) {
+	  public void createEnseignantToGroupes(@RequestBody EnseignantGroupe enseignantGroupe) {
 	  enseignantService.addEnseignantToGroupe(enseignantGroupe.getMail(),enseignantGroupe.getNumeroGroupe());
 	  }
 	  
 	  @ApiOperation(value = "Enregistrer un nouveau Enseignant et l'affecter automatiquement à un groupe")
 	  
 	  @RequestMapping(value = "/Enseignants/saveEnseignantWihtGroupe/{groupe}", method = RequestMethod.POST)
-	  public void  saveEnseignantWihtGroupe(@Valid @RequestBody Enseignant enseignant,@PathVariable("groupe") String groupe) {
+	  public void  createEnseignantWihtGroupe(@Valid @RequestBody Enseignant enseignant,@PathVariable("groupe") String groupe) {
 	  enseignantService.saveEnseignantWihtGroupe(enseignant,groupe);
 	  }
 	 
@@ -147,7 +147,7 @@ public class EnseignantRestController {
 
 	@ApiOperation(value = "Affiche la liste des  Enseignants  selon le statut sélctionné")
 	@RequestMapping(value = "/Enseignants/Statut/{statut}", method = RequestMethod.GET)
-	public List<Enseignant> findByEnseignantStatut(@PathVariable("statut") String statut) {
+	public List<Enseignant> getByEnseignantStatut(@PathVariable("statut") String statut) {
 		return enseignantService.findByEnseignantStatut(statut);
 	}
 	
@@ -159,13 +159,13 @@ public class EnseignantRestController {
 
 	@ApiOperation(value = "Affiche la liste des  Enseignants  selon  le nom, le prénom ou le statut")
 	@RequestMapping(value = "/Enseignants/Cherche/{value}", method = RequestMethod.GET)
-	public List<Enseignant> findByFirstNameLastNameStatut(@PathVariable("value") String value) {
+	public List<Enseignant> getByFirstNameLastNameStatut(@PathVariable("value") String value) {
 		return enseignantService.findByFirstNameLastNameStatut(value);
 	}
 
 	@ApiOperation(value = "Affiche la liste des  Enseignants  pour un groupe selon son id")
 	@RequestMapping(value = "/Enseignants/Groupe/{id}", method = RequestMethod.GET)
-	public List<Enseignant> findByGroupesId(@PathVariable("id") Long id) {
+	public List<Enseignant> getByGroupesId(@PathVariable("id") Long id) {
 		return enseignantService.findByGroupesId(id);
 	}
 	
@@ -173,7 +173,7 @@ public class EnseignantRestController {
 
 	@ApiOperation(value = "Affiche la liste des Enseignants par ordre alphabétique suivant les noms")
 	@RequestMapping(value = "/Enseignants/Trier", method = RequestMethod.GET)
-	public List<Enseignant> findByOrderByLastNameAsc() {
+	public List<Enseignant> getByOrderByLastNameAsc() {
 		return enseignantService.findByOrderByLastNameAsc();
 	}
 

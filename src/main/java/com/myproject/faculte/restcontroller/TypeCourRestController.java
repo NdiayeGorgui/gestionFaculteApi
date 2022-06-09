@@ -29,13 +29,13 @@ public class TypeCourRestController {
 
 	@ApiOperation(value = "Affiche la liste des type de cours")
 	@RequestMapping(value = "/TypeCours", method = RequestMethod.GET)
-	public List<TypeCour> getAllCours() {
+	public List<TypeCour> getAllTypeCours() {
 		return typeCourService.getAllTypeCours();
 	}
 
 	@ApiOperation(value = "Récupère un type de cours selon son id")
 	@RequestMapping(value = "TypeCours/{id}", method = RequestMethod.GET)
-	public TypeCour getTypeCour(@PathVariable("id") final Long id) throws ResourceNotFoundException {
+	public TypeCour getTypeCours(@PathVariable("id") final Long id) throws ResourceNotFoundException {
 		Optional<TypeCour> typeCour = typeCourService.getTypeCour(id);
 		if (typeCour.isPresent()) {
 			return typeCour.get();
@@ -46,13 +46,13 @@ public class TypeCourRestController {
 
 	@ApiOperation(value = "Ajouter un nouveau type de cours")
 	@RequestMapping(value = "/TypeCours", method = RequestMethod.POST)
-	public TypeCour createTypeCour(@RequestBody TypeCour typeCour) {
+	public TypeCour createTypeCours(@RequestBody TypeCour typeCour) {
 		return typeCourService.saveTypeCour(typeCour);
 	}
 
 	@ApiOperation(value = "Modifier un type de cours selon son id")
 	@RequestMapping(value = "/TypeCours/{id}", method = RequestMethod.PUT)
-	public TypeCour updateTypeCour(@PathVariable("id") final Long id, @RequestBody TypeCour typeCour) throws ResourceNotFoundException {
+	public TypeCour updateTypeCours(@PathVariable("id") final Long id, @RequestBody TypeCour typeCour) throws ResourceNotFoundException {
 		Optional<TypeCour> tc = typeCourService.getTypeCour(id);
 		if (tc.isPresent()) {
 			TypeCour currentTypeCour = tc.get();
@@ -75,7 +75,7 @@ public class TypeCourRestController {
 
 	@ApiOperation(value = "Supprimer un type de cours selon son id")
 	@RequestMapping(value = "TypeCours/{id}", method = RequestMethod.DELETE)
-	public void deleteCour(@PathVariable("id") Long id)  {
+	public void deleteTypeCours(@PathVariable("id") Long id)  {
 		typeCourService.deleteTypeCourById(id);
 	}
 

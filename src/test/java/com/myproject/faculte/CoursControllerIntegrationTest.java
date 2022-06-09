@@ -20,14 +20,15 @@ public class CoursControllerIntegrationTest {
 
 	@Autowired
 	private TestRestTemplate testRestTemplate;
-
+	//private String baseURL="http://localhost";
+ 
 	@Test
 	// @Sql("/test.sql")
 	public void getAllCoursTest() {
 		List<Cour> cours = testRestTemplate.getForObject("http://localhost:" + port + "/api/Cours", List.class);
 
 		Assertions.assertNotNull(cours);
-		Assertions.assertEquals(31, cours.size());
+		Assertions.assertEquals(12, cours.size());
 
 	}
 
@@ -60,7 +61,7 @@ public class CoursControllerIntegrationTest {
 	@Test
 	public void updateCoursByIdTest() {
 		Cour cours = testRestTemplate.getForObject("http://localhost:" + port + "/api/Cours/58", Cour.class);
-		
+		//Cour coursFromDB=coursRepository.findById(58L).get();
 		cours.setLibelle("Base de données Oracle");
 		cours.setNbeHeure(54);
 

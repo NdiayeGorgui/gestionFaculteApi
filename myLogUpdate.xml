@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-06-08T23:55:36.967308100Z</date>
+  <millis>1654732536967</millis>
+  <nanos>308100</nanos>
+  <sequence>79</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectUpdate</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectUpdate</class>
+  <method>log</method>
+  <thread>50</thread>
+  <message>Method Invoked before proceddind TypeCour com.myproject.faculte.restcontroller.TypeCourRestController.updateTypeCours(Long,TypeCour)</message>
+</record>
+<record>
+  <date>2022-06-08T23:55:36.967678800Z</date>
+  <millis>1654732536967</millis>
+  <nanos>678800</nanos>
+  <sequence>80</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectUpdate</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectUpdate</class>
+  <method>log</method>
+  <thread>50</thread>
+  <message>Class Invoked before proceddind class com.myproject.faculte.restcontroller.TypeCourRestController</message>
+</record>
+<record>
+  <date>2022-06-08T23:55:37.051272700Z</date>
+  <millis>1654732537051</millis>
+  <nanos>272700</nanos>
+  <sequence>87</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectUpdate</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectUpdate</class>
+  <method>log</method>
+  <thread>50</thread>
+  <message>Method Invoked after proceddind TypeCour com.myproject.faculte.restcontroller.TypeCourRestController.updateTypeCours(Long,TypeCour)</message>
+</record>
+<record>
+  <date>2022-06-08T23:55:37.052272600Z</date>
+  <millis>1654732537052</millis>
+  <nanos>272600</nanos>
+  <sequence>88</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectUpdate</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectUpdate</class>
+  <method>log</method>
+  <thread>50</thread>
+  <message>Method Invoked after proceddind class com.myproject.faculte.restcontroller.TypeCourRestController</message>
+</record>
+<record>
+  <date>2022-06-08T23:55:37.052272600Z</date>
+  <millis>1654732537052</millis>
+  <nanos>272600</nanos>
+  <sequence>89</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectUpdate</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectUpdate</class>
+  <method>log</method>
+  <thread>50</thread>
+  <message>execution time for the method: TypeCour com.myproject.faculte.restcontroller.TypeCourRestController.updateTypeCours(Long,TypeCour) =85 ms</message>
+</record>

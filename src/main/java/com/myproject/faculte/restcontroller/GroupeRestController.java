@@ -85,25 +85,25 @@ public class GroupeRestController {
 
 	@ApiOperation(value = "Affiche la liste des groupes d'une formation sélctionné selon son id")
 	@RequestMapping(value = "Groupes/Formations/{id}", method = RequestMethod.GET)
-	public List<Groupe> findByFormationId(@PathVariable("id") Long id) {
+	public List<Groupe> getGroupesByFormationId(@PathVariable("id") Long id) {
 		return groupeService.findByFormationId(id);
 	}
 
 	@ApiOperation(value = "Affiche la liste des groupes d'une formation sélctionné selon son nom")
 	@RequestMapping(value = "Groupes/Formations/Nom/{nom}", method = RequestMethod.GET)
-	public List<Groupe> findByFormationNomFormation(@PathVariable("nom") String nom) {
+	public List<Groupe> getGroupesByFormationNomFormation(@PathVariable("nom") String nom) {
 		return groupeService.findByFormationNomFormation(nom);
 	}
 
 	@ApiOperation(value = "Affiche la liste des groupes pour un enseignant  selon son id")
 	@RequestMapping(value = "Groupes/Enseignants/{id}", method = RequestMethod.GET)
-	public List<Groupe> findByEnseignantsId(@PathVariable("id") Long id) {
+	public List<Groupe> getGroupeByEnseignantsId(@PathVariable("id") Long id) {
 		return groupeService.findByEnseignantsId(id);
 	}
 	
 	@ApiOperation(value = "Affiche la liste des groupes selon le numéro du groupe")
 	@RequestMapping(value = "Groupes/Numero/{numero}", method = RequestMethod.GET)
-	public List<Groupe> findByNumeroGroupe(@PathVariable("numero") String numero) {
+	public List<Groupe> getGroupeByNumeroGroupe(@PathVariable("numero") String numero) {
 		return groupeService.findByNumeroGroupe(numero);
 	}
 }

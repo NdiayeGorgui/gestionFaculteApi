@@ -176,4 +176,6 @@ public class CourServiceImpl implements CourService{
 		return courRepository.getSumNbeHeureByTypecoursId(id);
 	}
 
+	
+
 }

@@ -61,8 +61,8 @@ public class CoursJpaTest {
 
 		Cour cours1 = new Cour();
 		cours1.setId(1L);
-		cours1.setLibelle("maths");
-		cours1.setNbeHeure(25);
+		cours1.setLibelle("Java");
+		cours1.setNbeHeure(45);
 
 		when(courService.getCour(1L)).thenReturn(Optional.of(cours1));
 		Assertions.assertThat(cours1.getId()).isEqualTo(1L);

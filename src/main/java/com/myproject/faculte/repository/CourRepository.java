@@ -46,6 +46,8 @@ public interface CourRepository extends JpaRepository<Cour, Long> {
 	//le nombre d'heures total 
 		@Query("select sum(c.nbeHeure) from Cour c")
 				
-		double getSumNbeHeure();	
+		double getSumNbeHeure();
+		
+	
 
 }

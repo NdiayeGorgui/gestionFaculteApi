@@ -154,7 +154,7 @@ public class UserRestController {
 	
 	@ApiOperation(value = "Ajoute un role à un utilisateur")
 	@RequestMapping(value = "Users/addRoleToUser/{userName}/{roleName}", method = RequestMethod.POST)
-	public void addRoleToUser(@PathVariable("userName") String userName, @PathVariable("roleName") String roleName) {
+	public void createRoleToUser(@PathVariable("userName") String userName, @PathVariable("roleName") String roleName) {
 	
 		userService.addRoleToUser(userName, roleName);
 
@@ -162,7 +162,7 @@ public class UserRestController {
 	//autre maniéere de faire
 	@ApiOperation(value = "Ajoute un role à un utilisateur")
 	@RequestMapping(value = "Users/addRoleToUser", method = RequestMethod.POST)
-	public void addRoleToUserForm(@Valid @RequestBody RoleUser roleUser) {
+	public void createRoleToUserForm(@Valid @RequestBody RoleUser roleUser) {
 	
 		userService.addRoleToUser(roleUser.getUserName(), roleUser.getRoleName());
 
@@ -178,25 +178,25 @@ public class UserRestController {
 	
 	@ApiOperation(value = "Ajoute  un utilisateur et l'affecter un role")
 	@RequestMapping(value = "Users/addUserWithRole/{roleName}", method = RequestMethod.POST)
-	public void saveUserWihtRole(@Valid @RequestBody  User user, @PathVariable("roleName") String roleName) {
+	public void createUserWihtRole(@Valid @RequestBody  User user, @PathVariable("roleName") String roleName) {
 	
 		userService.saveUserWihtRole(user, roleName);
 
 	}
 	@ApiOperation(value = "Affiche la liste des  Users  pour un role selon son id")
 	@RequestMapping(value = "/Users/Role/{id}", method = RequestMethod.GET)
-	public List<User> findByRolesId(@PathVariable("id") Long id) {
+	public List<User> getUsersByRolesId(@PathVariable("id") Long id) {
 		return userService.findByRolesId(id);
 	}
 	@ApiOperation(value = "Affiche la liste des  Users  pour un role selon son nom")
 	@RequestMapping(value = "/Users/Role/UserName/{userName}", method = RequestMethod.GET)
-	public List<Role> findByRolesId(@PathVariable("userName") String userName) {
+	public List<Role> getRolesByUserName(@PathVariable("userName") String userName) {
 		return userService.findByUsersUserName(userName);
 	}
 	
 	@ApiOperation(value = "Affiche la liste des  Roles  pour un user selon son id")
 	@RequestMapping(value = "/Roles/User/{id}", method = RequestMethod.GET)
-	public List<Role> findByUsersUserId(@PathVariable("id") Long id) {
+	public List<Role> getRolesByUserId(@PathVariable("id") Long id) {
 		return userService.findByUsersUserId(id);
 	}
 

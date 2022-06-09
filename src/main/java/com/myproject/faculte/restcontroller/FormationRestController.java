@@ -30,7 +30,7 @@ public class FormationRestController {
 
 	@ApiOperation(value = "Affiche la liste des formations")
 	@RequestMapping(value = "/Formations", method = RequestMethod.GET)
-	public List<Formation> getAllCours() {
+	public List<Formation> getAllFormations() {
 		return formationService.getAllFormations();
 	}
 
@@ -92,20 +92,23 @@ public class FormationRestController {
 	
 	@ApiOperation(value = "Affiche la liste des formations où un un cours existe selon son id")
 	@RequestMapping(value = "Formations/Cours/{id}",  method = RequestMethod.GET)
-	public List<Formation> findByCoursId(@PathVariable("id") Long id) {
+	public List<Formation> getFormationsByCoursId(@PathVariable("id") Long id) {
 		return formationService.findByCoursId(id);
 	}
 	
 	@ApiOperation(value = "Affiche la liste des formations où un un cours existe selon son libellé")
 	@RequestMapping(value = "Formations/Cours/Libelle/{libelle}",  method = RequestMethod.GET)
-	public List<Formation> findByCoursLibelle(@PathVariable("libelle") String libelle) {
+	public List<Formation> getFormationsByCoursLibelle(@PathVariable("libelle") String libelle) {
 		return formationService.findByCoursLibelle(libelle);
 	}
 	
 	@ApiOperation(value = "Affiche la liste de formations contenant un cercain critére")
 	@RequestMapping(value = "Formations/Cherche/{nom}", method = RequestMethod.GET)
-	public List<Formation> findByNomFormationContains(@PathVariable("nom") String nom) {
+	public List<Formation> getFormationsByNomFormationContains(@PathVariable("nom") String nom) {
 		return formationService.findByNomFormationContains(nom);
 	}
+	
+	
+
 
 }

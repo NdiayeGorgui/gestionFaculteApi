@@ -1,0 +1,784 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-06-08T19:39:15.726287500Z</date>
+  <millis>1654717155726</millis>
+  <nanos>287500</nanos>
+  <sequence>483</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>511</thread>
+  <message>Method Invoked before proceddind List com.myproject.faculte.restcontroller.FormationRestController.getAllFormations()</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:15.728285200Z</date>
+  <millis>1654717155728</millis>
+  <nanos>285200</nanos>
+  <sequence>484</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>511</thread>
+  <message>Class Invoked before proceddind class com.myproject.faculte.restcontroller.FormationRestController</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:15.735929900Z</date>
+  <millis>1654717155735</millis>
+  <nanos>929900</nanos>
+  <sequence>485</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>511</thread>
+  <message>Method Invoked before proceddind List com.myproject.faculte.service.FormationServiceImpl.getAllFormations()</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:15.735929900Z</date>
+  <millis>1654717155735</millis>
+  <nanos>929900</nanos>
+  <sequence>486</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>511</thread>
+  <message>Class Invoked before proceddind class com.myproject.faculte.service.FormationServiceImpl</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:15.755926400Z</date>
+  <millis>1654717155755</millis>
+  <nanos>926400</nanos>
+  <sequence>487</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>511</thread>
+  <message>Method Invoked after proceddind List com.myproject.faculte.service.FormationServiceImpl.getAllFormations()</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:15.756926400Z</date>
+  <millis>1654717155756</millis>
+  <nanos>926400</nanos>
+  <sequence>488</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>511</thread>
+  <message>Method Invoked after proceddind class com.myproject.faculte.service.FormationServiceImpl</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:15.756926400Z</date>
+  <millis>1654717155756</millis>
+  <nanos>926400</nanos>
+  <sequence>489</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>511</thread>
+  <message>execution time for the method: List com.myproject.faculte.service.FormationServiceImpl.getAllFormations() =21 ms</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:15.757925900Z</date>
+  <millis>1654717155757</millis>
+  <nanos>925900</nanos>
+  <sequence>490</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>511</thread>
+  <message>Method Invoked after proceddind List com.myproject.faculte.restcontroller.FormationRestController.getAllFormations()</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:15.757925900Z</date>
+  <millis>1654717155757</millis>
+  <nanos>925900</nanos>
+  <sequence>491</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>511</thread>
+  <message>Method Invoked after proceddind class com.myproject.faculte.restcontroller.FormationRestController</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:15.758925700Z</date>
+  <millis>1654717155758</millis>
+  <nanos>925700</nanos>
+  <sequence>492</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>511</thread>
+  <message>execution time for the method: List com.myproject.faculte.restcontroller.FormationRestController.getAllFormations() =33 ms</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:57.512127100Z</date>
+  <millis>1654717197512</millis>
+  <nanos>127100</nanos>
+  <sequence>498</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>516</thread>
+  <message>Method Invoked before proceddind List com.myproject.faculte.restcontroller.TypeCourRestController.getAllTypeCours()</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:57.515070200Z</date>
+  <millis>1654717197515</millis>
+  <nanos>70200</nanos>
+  <sequence>499</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>516</thread>
+  <message>Class Invoked before proceddind class com.myproject.faculte.restcontroller.TypeCourRestController</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:57.516066400Z</date>
+  <millis>1654717197516</millis>
+  <nanos>66400</nanos>
+  <sequence>500</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>516</thread>
+  <message>Method Invoked before proceddind List com.myproject.faculte.service.TypeCourServiceImpl.getAllTypeCours()</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:57.517071100Z</date>
+  <millis>1654717197517</millis>
+  <nanos>71100</nanos>
+  <sequence>501</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>516</thread>
+  <message>Class Invoked before proceddind class com.myproject.faculte.service.TypeCourServiceImpl</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:57.523703Z</date>
+  <millis>1654717197523</millis>
+  <nanos>703000</nanos>
+  <sequence>502</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>516</thread>
+  <message>Method Invoked after proceddind List com.myproject.faculte.service.TypeCourServiceImpl.getAllTypeCours()</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:57.524729400Z</date>
+  <millis>1654717197524</millis>
+  <nanos>729400</nanos>
+  <sequence>503</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>516</thread>
+  <message>Method Invoked after proceddind class com.myproject.faculte.service.TypeCourServiceImpl</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:57.525755600Z</date>
+  <millis>1654717197525</millis>
+  <nanos>755600</nanos>
+  <sequence>504</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>516</thread>
+  <message>execution time for the method: List com.myproject.faculte.service.TypeCourServiceImpl.getAllTypeCours() =9 ms</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:57.526756600Z</date>
+  <millis>1654717197526</millis>
+  <nanos>756600</nanos>
+  <sequence>505</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>516</thread>
+  <message>Method Invoked after proceddind List com.myproject.faculte.restcontroller.TypeCourRestController.getAllTypeCours()</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:57.527756700Z</date>
+  <millis>1654717197527</millis>
+  <nanos>756700</nanos>
+  <sequence>506</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>516</thread>
+  <message>Method Invoked after proceddind class com.myproject.faculte.restcontroller.TypeCourRestController</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:57.528820200Z</date>
+  <millis>1654717197528</millis>
+  <nanos>820200</nanos>
+  <sequence>507</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>516</thread>
+  <message>execution time for the method: List com.myproject.faculte.restcontroller.TypeCourRestController.getAllTypeCours() =16 ms</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:59.712098500Z</date>
+  <millis>1654717199712</millis>
+  <nanos>98500</nanos>
+  <sequence>508</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>518</thread>
+  <message>Method Invoked before proceddind TypeCour com.myproject.faculte.restcontroller.TypeCourRestController.getTypeCours(Long)</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:59.713097Z</date>
+  <millis>1654717199713</millis>
+  <nanos>97000</nanos>
+  <sequence>509</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>518</thread>
+  <message>Class Invoked before proceddind class com.myproject.faculte.restcontroller.TypeCourRestController</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:59.715102100Z</date>
+  <millis>1654717199715</millis>
+  <nanos>102100</nanos>
+  <sequence>510</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>518</thread>
+  <message>Method Invoked before proceddind Optional com.myproject.faculte.service.TypeCourServiceImpl.getTypeCour(Long)</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:59.715965800Z</date>
+  <millis>1654717199715</millis>
+  <nanos>965800</nanos>
+  <sequence>511</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>518</thread>
+  <message>Class Invoked before proceddind class com.myproject.faculte.service.TypeCourServiceImpl</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:59.722341600Z</date>
+  <millis>1654717199722</millis>
+  <nanos>341600</nanos>
+  <sequence>512</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>518</thread>
+  <message>Method Invoked after proceddind Optional com.myproject.faculte.service.TypeCourServiceImpl.getTypeCour(Long)</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:59.723827800Z</date>
+  <millis>1654717199723</millis>
+  <nanos>827800</nanos>
+  <sequence>513</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>518</thread>
+  <message>Method Invoked after proceddind class com.myproject.faculte.service.TypeCourServiceImpl</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:59.724489Z</date>
+  <millis>1654717199724</millis>
+  <nanos>489000</nanos>
+  <sequence>514</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>518</thread>
+  <message>execution time for the method: Optional com.myproject.faculte.service.TypeCourServiceImpl.getTypeCour(Long) =9 ms</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:59.725499100Z</date>
+  <millis>1654717199725</millis>
+  <nanos>499100</nanos>
+  <sequence>515</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>518</thread>
+  <message>Method Invoked after proceddind TypeCour com.myproject.faculte.restcontroller.TypeCourRestController.getTypeCours(Long)</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:59.726501200Z</date>
+  <millis>1654717199726</millis>
+  <nanos>501200</nanos>
+  <sequence>516</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>518</thread>
+  <message>Method Invoked after proceddind class com.myproject.faculte.restcontroller.TypeCourRestController</message>
+</record>
+<record>
+  <date>2022-06-08T19:39:59.726501200Z</date>
+  <millis>1654717199726</millis>
+  <nanos>501200</nanos>
+  <sequence>517</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>518</thread>
+  <message>execution time for the method: TypeCour com.myproject.faculte.restcontroller.TypeCourRestController.getTypeCours(Long) =14 ms</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:03.961542900Z</date>
+  <millis>1654717203961</millis>
+  <nanos>542900</nanos>
+  <sequence>520</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>510</thread>
+  <message>Method Invoked before proceddind Optional com.myproject.faculte.service.TypeCourServiceImpl.getTypeCour(Long)</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:03.962021900Z</date>
+  <millis>1654717203962</millis>
+  <nanos>21900</nanos>
+  <sequence>521</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>510</thread>
+  <message>Class Invoked before proceddind class com.myproject.faculte.service.TypeCourServiceImpl</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:03.964984500Z</date>
+  <millis>1654717203964</millis>
+  <nanos>984500</nanos>
+  <sequence>522</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>510</thread>
+  <message>Method Invoked after proceddind Optional com.myproject.faculte.service.TypeCourServiceImpl.getTypeCour(Long)</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:03.965985800Z</date>
+  <millis>1654717203965</millis>
+  <nanos>985800</nanos>
+  <sequence>523</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>510</thread>
+  <message>Method Invoked after proceddind class com.myproject.faculte.service.TypeCourServiceImpl</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:03.965985800Z</date>
+  <millis>1654717203965</millis>
+  <nanos>985800</nanos>
+  <sequence>524</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>510</thread>
+  <message>execution time for the method: Optional com.myproject.faculte.service.TypeCourServiceImpl.getTypeCour(Long) =4 ms</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:05.748344400Z</date>
+  <millis>1654717205748</millis>
+  <nanos>344400</nanos>
+  <sequence>528</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>512</thread>
+  <message>Method Invoked before proceddind List com.myproject.faculte.restcontroller.TypeCourRestController.getAllTypeCours()</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:05.749334600Z</date>
+  <millis>1654717205749</millis>
+  <nanos>334600</nanos>
+  <sequence>529</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>512</thread>
+  <message>Class Invoked before proceddind class com.myproject.faculte.restcontroller.TypeCourRestController</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:05.749334600Z</date>
+  <millis>1654717205749</millis>
+  <nanos>334600</nanos>
+  <sequence>530</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>512</thread>
+  <message>Method Invoked before proceddind List com.myproject.faculte.service.TypeCourServiceImpl.getAllTypeCours()</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:05.750334400Z</date>
+  <millis>1654717205750</millis>
+  <nanos>334400</nanos>
+  <sequence>531</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>512</thread>
+  <message>Class Invoked before proceddind class com.myproject.faculte.service.TypeCourServiceImpl</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:05.754331500Z</date>
+  <millis>1654717205754</millis>
+  <nanos>331500</nanos>
+  <sequence>532</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>512</thread>
+  <message>Method Invoked after proceddind List com.myproject.faculte.service.TypeCourServiceImpl.getAllTypeCours()</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:05.755366400Z</date>
+  <millis>1654717205755</millis>
+  <nanos>366400</nanos>
+  <sequence>533</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>512</thread>
+  <message>Method Invoked after proceddind class com.myproject.faculte.service.TypeCourServiceImpl</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:05.757340500Z</date>
+  <millis>1654717205757</millis>
+  <nanos>340500</nanos>
+  <sequence>534</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>512</thread>
+  <message>execution time for the method: List com.myproject.faculte.service.TypeCourServiceImpl.getAllTypeCours() =8 ms</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:05.759935800Z</date>
+  <millis>1654717205759</millis>
+  <nanos>935800</nanos>
+  <sequence>535</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>512</thread>
+  <message>Method Invoked after proceddind List com.myproject.faculte.restcontroller.TypeCourRestController.getAllTypeCours()</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:05.760427100Z</date>
+  <millis>1654717205760</millis>
+  <nanos>427100</nanos>
+  <sequence>536</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>512</thread>
+  <message>Method Invoked after proceddind class com.myproject.faculte.restcontroller.TypeCourRestController</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:05.761307900Z</date>
+  <millis>1654717205761</millis>
+  <nanos>307900</nanos>
+  <sequence>537</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>512</thread>
+  <message>execution time for the method: List com.myproject.faculte.restcontroller.TypeCourRestController.getAllTypeCours() =13 ms</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:23.860979Z</date>
+  <millis>1654717223860</millis>
+  <nanos>979000</nanos>
+  <sequence>553</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>517</thread>
+  <message>Method Invoked before proceddind List com.myproject.faculte.restcontroller.TypeCourRestController.getAllTypeCours()</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:23.861977800Z</date>
+  <millis>1654717223861</millis>
+  <nanos>977800</nanos>
+  <sequence>554</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>517</thread>
+  <message>Class Invoked before proceddind class com.myproject.faculte.restcontroller.TypeCourRestController</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:23.861977800Z</date>
+  <millis>1654717223861</millis>
+  <nanos>977800</nanos>
+  <sequence>555</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>517</thread>
+  <message>Method Invoked before proceddind List com.myproject.faculte.service.TypeCourServiceImpl.getAllTypeCours()</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:23.861977800Z</date>
+  <millis>1654717223861</millis>
+  <nanos>977800</nanos>
+  <sequence>556</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>517</thread>
+  <message>Class Invoked before proceddind class com.myproject.faculte.service.TypeCourServiceImpl</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:23.866018400Z</date>
+  <millis>1654717223866</millis>
+  <nanos>18400</nanos>
+  <sequence>557</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>517</thread>
+  <message>Method Invoked after proceddind List com.myproject.faculte.service.TypeCourServiceImpl.getAllTypeCours()</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:23.866018400Z</date>
+  <millis>1654717223866</millis>
+  <nanos>18400</nanos>
+  <sequence>558</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>517</thread>
+  <message>Method Invoked after proceddind class com.myproject.faculte.service.TypeCourServiceImpl</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:23.867270300Z</date>
+  <millis>1654717223867</millis>
+  <nanos>270300</nanos>
+  <sequence>559</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>517</thread>
+  <message>execution time for the method: List com.myproject.faculte.service.TypeCourServiceImpl.getAllTypeCours() =6 ms</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:23.867541400Z</date>
+  <millis>1654717223867</millis>
+  <nanos>541400</nanos>
+  <sequence>560</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>517</thread>
+  <message>Method Invoked after proceddind List com.myproject.faculte.restcontroller.TypeCourRestController.getAllTypeCours()</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:23.867541400Z</date>
+  <millis>1654717223867</millis>
+  <nanos>541400</nanos>
+  <sequence>561</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>517</thread>
+  <message>Method Invoked after proceddind class com.myproject.faculte.restcontroller.TypeCourRestController</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:23.868839300Z</date>
+  <millis>1654717223868</millis>
+  <nanos>839300</nanos>
+  <sequence>562</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>517</thread>
+  <message>execution time for the method: List com.myproject.faculte.restcontroller.TypeCourRestController.getAllTypeCours() =8 ms</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:45.661116400Z</date>
+  <millis>1654717245661</millis>
+  <nanos>116400</nanos>
+  <sequence>563</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>511</thread>
+  <message>Method Invoked before proceddind List com.myproject.faculte.restcontroller.CourRestController.getAllCours()</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:45.662131300Z</date>
+  <millis>1654717245662</millis>
+  <nanos>131300</nanos>
+  <sequence>564</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>511</thread>
+  <message>Class Invoked before proceddind class com.myproject.faculte.restcontroller.CourRestController</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:45.669909300Z</date>
+  <millis>1654717245669</millis>
+  <nanos>909300</nanos>
+  <sequence>565</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>511</thread>
+  <message>Method Invoked before proceddind List com.myproject.faculte.service.CourServiceImpl.getAllCours()</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:45.669909300Z</date>
+  <millis>1654717245669</millis>
+  <nanos>909300</nanos>
+  <sequence>566</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>511</thread>
+  <message>Class Invoked before proceddind class com.myproject.faculte.service.CourServiceImpl</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:45.710745900Z</date>
+  <millis>1654717245710</millis>
+  <nanos>745900</nanos>
+  <sequence>567</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>511</thread>
+  <message>Method Invoked after proceddind List com.myproject.faculte.service.CourServiceImpl.getAllCours()</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:45.710745900Z</date>
+  <millis>1654717245710</millis>
+  <nanos>745900</nanos>
+  <sequence>568</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>511</thread>
+  <message>Method Invoked after proceddind class com.myproject.faculte.service.CourServiceImpl</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:45.711745100Z</date>
+  <millis>1654717245711</millis>
+  <nanos>745100</nanos>
+  <sequence>569</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>511</thread>
+  <message>execution time for the method: List com.myproject.faculte.service.CourServiceImpl.getAllCours() =41 ms</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:45.711745100Z</date>
+  <millis>1654717245711</millis>
+  <nanos>745100</nanos>
+  <sequence>570</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>511</thread>
+  <message>Method Invoked after proceddind List com.myproject.faculte.restcontroller.CourRestController.getAllCours()</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:45.711745100Z</date>
+  <millis>1654717245711</millis>
+  <nanos>745100</nanos>
+  <sequence>571</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>511</thread>
+  <message>Method Invoked after proceddind class com.myproject.faculte.restcontroller.CourRestController</message>
+</record>
+<record>
+  <date>2022-06-08T19:40:45.711745100Z</date>
+  <millis>1654717245711</millis>
+  <nanos>745100</nanos>
+  <sequence>572</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectGet</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectGet</class>
+  <method>log</method>
+  <thread>511</thread>
+  <message>execution time for the method: List com.myproject.faculte.restcontroller.CourRestController.getAllCours() =50 ms</message>
+</record>
+</log>

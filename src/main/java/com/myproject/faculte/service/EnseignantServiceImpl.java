@@ -142,6 +142,15 @@ public class EnseignantServiceImpl implements EnseignantService {
 		
 	}
 
+	//cette methode permet de compter le nombre d'enseignant pour chaque statut
+	//objectif l'utiliser dans actuator info
+	@Override
+	public Long getEnseignantStatusCountByStatus(String status) {
+		
+		return getAllEnseignants().stream().filter(enseignant->enseignant.getStatut().equals(status)).count();
+		
+	}
+
 	
 
 }

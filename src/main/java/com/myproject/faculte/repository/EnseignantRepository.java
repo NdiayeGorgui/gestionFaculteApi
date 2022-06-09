@@ -30,6 +30,9 @@ public interface EnseignantRepository extends JpaRepository<Enseignant, Long> {
 	// pour afficher la liste des enseignants(suivant le statut de l"ens)
 	@Query("select e from Enseignant e where  e.statut like %:statut")
 	List<Enseignant> findByEnseignantStatut(@Param("statut") String statut);
+	
+	//@Query("select e from Enseignant e where  e.statut =:statut")
+	//List<Enseignant> findByEnseignantStatut(@Param("statut") String statut);
 
 	// pour avoir la liste des cours effectuée par un enseignant 
 	@Query("select c from Cour c where c.enseignant = ?1")

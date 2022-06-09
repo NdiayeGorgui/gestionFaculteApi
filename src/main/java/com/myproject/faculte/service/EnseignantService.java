@@ -30,4 +30,5 @@ public interface EnseignantService {
 	List<Enseignant> findByGroupesId(Long id);
 	List<Enseignant> findByFirstNameLastNameStatut( String value);
 	List<Enseignant> findByOrderByLastNameAsc();
+	Long getEnseignantStatusCountByStatus(String status);
 }

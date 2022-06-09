@@ -67,7 +67,7 @@ public class CourRestController {
 	 @ApiOperation(value = "Affecter un cours à une formation")
 	  
 	  @RequestMapping(value = "/Cours/addCoursToFormation", method = RequestMethod.POST)
-	  public void addCoursToFormations(@RequestBody CoursFormation coursFormation) {
+	  public void createCoursToFormations(@RequestBody CoursFormation coursFormation) {
 		 courService.addCoursToFormation(coursFormation.getLibelle(),coursFormation.getNomFormation());
 	  }
 	 
@@ -75,7 +75,7 @@ public class CourRestController {
 	 @ApiOperation(value = "Enregistrer un nouveau cours et l'affecter automatiquement à une formation")
 	  
 	  @RequestMapping(value = "/Cours/saveCoursWithFormation/{formation}", method = RequestMethod.POST)
-	  public void saveCoursWithFormation(@Valid @RequestBody Cour cours,@PathVariable("formation") String formation) {
+	  public void createCoursWithFormation(@Valid @RequestBody Cour cours,@PathVariable("formation") String formation) {
 		 courService.saveCoursWithFormation(cours,formation);
 	  }
 	 
@@ -127,25 +127,25 @@ public class CourRestController {
 
 	@ApiOperation(value = "Affiche la liste de cours d'un Enseignant sélctionné selon son id")
 	@RequestMapping(value = "Cours/Enseignants/{id}", method = RequestMethod.GET)
-	public List<Cour> findByEnseignantId(@PathVariable("id") Long id) {
+	public List<Cour> getCoursByEnseignantId(@PathVariable("id") Long id) {
 		return courService.findByEnseignantId(id);
 	}
 
 	@ApiOperation(value = "Affiche la liste de cours contenant un cercain critére")
 	@RequestMapping(value = "Cours/Libelle/{libelle}", method = RequestMethod.GET)
-	public List<Cour> findByLibelleContains(@PathVariable("libelle") String libelle) {
+	public List<Cour> getCoursByLibelleContains(@PathVariable("libelle") String libelle) {
 		return courService.findByLibelleContains(libelle);
 	}
 
 	@ApiOperation(value = "Affiche la liste de cours selon l'id de la formation selectionnée")
 	@RequestMapping(value = "Cours/Formations/{id}", method = RequestMethod.GET)
-	public List<Cour> findByFormationsId(@PathVariable("id") Long id) {
+	public List<Cour> getCoursByFormationsId(@PathVariable("id") Long id) {
 		return courService.findByFormationsId(id);
 	}
 
 	@ApiOperation(value = "Affiche la liste de cours selon le nom de la formation")
 	@RequestMapping(value = "Cours/FormationName/{nom}", method = RequestMethod.GET)
-	public List<Cour> findByFormationsNomFormation(@PathVariable("nom") String nom) {
+	public List<Cour> getCoursByFormationsNomFormation(@PathVariable("nom") String nom) {
 		return courService.findByFormationsNomFormation(nom);
 	}
 	
@@ -181,9 +181,10 @@ public class CourRestController {
 	
 	@ApiOperation(value = "Affiche le nombre total d'heures ")
 	@RequestMapping(value = "Cours/Enseignants/Global/SumHours", method = RequestMethod.GET)
-	public double getSumNbeHeureSupByStatut() {
+	public double getSumNbeHeure() {
 		return courService.getSumNbeHeure();
 	}
+	
 	
 	
 
