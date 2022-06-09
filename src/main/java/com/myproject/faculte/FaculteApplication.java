@@ -17,7 +17,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-@EnableAspectJAutoProxy
 public class FaculteApplication {
 
 	public static void main(String[] args) {

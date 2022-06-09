@@ -2,62 +2,62 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2022-06-08T23:55:36.967308100Z</date>
-  <millis>1654732536967</millis>
-  <nanos>308100</nanos>
-  <sequence>79</sequence>
+  <date>2022-06-09T04:02:51.658648100Z</date>
+  <millis>1654747371658</millis>
+  <nanos>648100</nanos>
+  <sequence>84</sequence>
   <logger>com.myproject.faculte.advice.LogAspectUpdate</logger>
   <level>INFO</level>
   <class>com.myproject.faculte.advice.LogAspectUpdate</class>
   <method>log</method>
-  <thread>50</thread>
+  <thread>48</thread>
   <message>Method Invoked before proceddind TypeCour com.myproject.faculte.restcontroller.TypeCourRestController.updateTypeCours(Long,TypeCour)</message>
 </record>
 <record>
-  <date>2022-06-08T23:55:36.967678800Z</date>
-  <millis>1654732536967</millis>
-  <nanos>678800</nanos>
-  <sequence>80</sequence>
+  <date>2022-06-09T04:02:51.659884100Z</date>
+  <millis>1654747371659</millis>
+  <nanos>884100</nanos>
+  <sequence>85</sequence>
   <logger>com.myproject.faculte.advice.LogAspectUpdate</logger>
   <level>INFO</level>
   <class>com.myproject.faculte.advice.LogAspectUpdate</class>
   <method>log</method>
-  <thread>50</thread>
+  <thread>48</thread>
   <message>Class Invoked before proceddind class com.myproject.faculte.restcontroller.TypeCourRestController</message>
 </record>
 <record>
-  <date>2022-06-08T23:55:37.051272700Z</date>
-  <millis>1654732537051</millis>
-  <nanos>272700</nanos>
-  <sequence>87</sequence>
+  <date>2022-06-09T04:02:51.695129400Z</date>
+  <millis>1654747371695</millis>
+  <nanos>129400</nanos>
+  <sequence>92</sequence>
   <logger>com.myproject.faculte.advice.LogAspectUpdate</logger>
   <level>INFO</level>
   <class>com.myproject.faculte.advice.LogAspectUpdate</class>
   <method>log</method>
-  <thread>50</thread>
+  <thread>48</thread>
   <message>Method Invoked after proceddind TypeCour com.myproject.faculte.restcontroller.TypeCourRestController.updateTypeCours(Long,TypeCour)</message>
 </record>
 <record>
-  <date>2022-06-08T23:55:37.052272600Z</date>
-  <millis>1654732537052</millis>
-  <nanos>272600</nanos>
-  <sequence>88</sequence>
+  <date>2022-06-09T04:02:51.696213400Z</date>
+  <millis>1654747371696</millis>
+  <nanos>213400</nanos>
+  <sequence>93</sequence>
   <logger>com.myproject.faculte.advice.LogAspectUpdate</logger>
   <level>INFO</level>
   <class>com.myproject.faculte.advice.LogAspectUpdate</class>
   <method>log</method>
-  <thread>50</thread>
+  <thread>48</thread>
   <message>Method Invoked after proceddind class com.myproject.faculte.restcontroller.TypeCourRestController</message>
 </record>
 <record>
-  <date>2022-06-08T23:55:37.052272600Z</date>
-  <millis>1654732537052</millis>
-  <nanos>272600</nanos>
-  <sequence>89</sequence>
+  <date>2022-06-09T04:02:51.696213400Z</date>
+  <millis>1654747371696</millis>
+  <nanos>213400</nanos>
+  <sequence>94</sequence>
   <logger>com.myproject.faculte.advice.LogAspectUpdate</logger>
   <level>INFO</level>
   <class>com.myproject.faculte.advice.LogAspectUpdate</class>
   <method>log</method>
-  <thread>50</thread>
-  <message>execution time for the method: TypeCour com.myproject.faculte.restcontroller.TypeCourRestController.updateTypeCours(Long,TypeCour) =85 ms</message>
+  <thread>48</thread>
+  <message>execution time for the method: TypeCour com.myproject.faculte.restcontroller.TypeCourRestController.updateTypeCours(Long,TypeCour) =38 ms</message>
 </record>

@@ -31,6 +31,11 @@ public class LogAspectGet {
     	
     }
     
+    @Pointcut(value="execution(* com.myproject.faculte.*.*..create*(..))")
+    public void myPointCut1() {
+    	
+    }
+    
    // @Around("execution(* com.myproject.faculte..*.get*(..))")
     @Around("myPointCut()")
     public Object log(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {

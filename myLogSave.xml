@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-06-09T04:02:41.311395300Z</date>
+  <millis>1654747361311</millis>
+  <nanos>395300</nanos>
+  <sequence>55</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectSave</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectSave</class>
+  <method>log</method>
+  <thread>54</thread>
+  <message>Method Invoked before proceddind TypeCour com.myproject.faculte.restcontroller.TypeCourRestController.createTypeCours(TypeCour)</message>
+</record>
+<record>
+  <date>2022-06-09T04:02:41.312586900Z</date>
+  <millis>1654747361312</millis>
+  <nanos>586900</nanos>
+  <sequence>56</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectSave</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectSave</class>
+  <method>log</method>
+  <thread>54</thread>
+  <message>Class Invoked before proceddind class com.myproject.faculte.restcontroller.TypeCourRestController</message>
+</record>
+<record>
+  <date>2022-06-09T04:02:41.388566100Z</date>
+  <millis>1654747361388</millis>
+  <nanos>566100</nanos>
+  <sequence>57</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectSave</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectSave</class>
+  <method>log</method>
+  <thread>54</thread>
+  <message>Method Invoked after proceddind TypeCour com.myproject.faculte.restcontroller.TypeCourRestController.createTypeCours(TypeCour)</message>
+</record>
+<record>
+  <date>2022-06-09T04:02:41.389571300Z</date>
+  <millis>1654747361389</millis>
+  <nanos>571300</nanos>
+  <sequence>58</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectSave</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectSave</class>
+  <method>log</method>
+  <thread>54</thread>
+  <message>Method Invoked after proceddind class com.myproject.faculte.restcontroller.TypeCourRestController</message>
+</record>
+<record>
+  <date>2022-06-09T04:02:41.389571300Z</date>
+  <millis>1654747361389</millis>
+  <nanos>571300</nanos>
+  <sequence>59</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectSave</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectSave</class>
+  <method>log</method>
+  <thread>54</thread>
+  <message>execution time for the method: TypeCour com.myproject.faculte.restcontroller.TypeCourRestController.createTypeCours(TypeCour) =78 ms</message>
+</record>
