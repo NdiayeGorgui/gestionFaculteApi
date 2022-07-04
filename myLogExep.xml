@@ -2,38 +2,110 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2022-06-09T04:03:03.484055800Z</date>
-  <millis>1654747383484</millis>
-  <nanos>55800</nanos>
-  <sequence>142</sequence>
+  <date>2022-07-04T04:19:18.633119600Z</date>
+  <millis>1656908358633</millis>
+  <nanos>119600</nanos>
+  <sequence>90</sequence>
   <logger>com.myproject.faculte.advice.LogAspectExeptions</logger>
   <level>INFO</level>
   <class>com.myproject.faculte.advice.LogAspectExeptions</class>
   <method>log</method>
-  <thread>46</thread>
-  <message>Method Invoked after throwing TypeCour com.myproject.faculte.restcontroller.TypeCourRestController.getTypeCours(Long)</message>
+  <thread>50</thread>
+  <message>Method Invoked after throwing void org.springframework.data.repository.CrudRepository.deleteById(Object)</message>
 </record>
 <record>
-  <date>2022-06-09T04:03:03.485022500Z</date>
-  <millis>1654747383485</millis>
-  <nanos>22500</nanos>
-  <sequence>143</sequence>
+  <date>2022-07-04T04:19:18.634964Z</date>
+  <millis>1656908358634</millis>
+  <nanos>964000</nanos>
+  <sequence>91</sequence>
   <logger>com.myproject.faculte.advice.LogAspectExeptions</logger>
   <level>INFO</level>
   <class>com.myproject.faculte.advice.LogAspectExeptions</class>
   <method>log</method>
-  <thread>46</thread>
-  <message>Class Invoked after throwing class com.myproject.faculte.restcontroller.TypeCourRestController</message>
+  <thread>50</thread>
+  <message>Class Invoked after throwing class com.sun.proxy.$Proxy149</message>
 </record>
 <record>
-  <date>2022-06-09T04:03:03.485022500Z</date>
-  <millis>1654747383485</millis>
-  <nanos>22500</nanos>
-  <sequence>144</sequence>
+  <date>2022-07-04T04:19:18.636032800Z</date>
+  <millis>1656908358636</millis>
+  <nanos>32800</nanos>
+  <sequence>92</sequence>
   <logger>com.myproject.faculte.advice.LogAspectExeptions</logger>
   <level>INFO</level>
   <class>com.myproject.faculte.advice.LogAspectExeptions</class>
   <method>log</method>
-  <thread>46</thread>
-  <message>Return whith Exeption execution(TypeCourRestController.getTypeCours(..)) ResourceNotFoundException</message>
+  <thread>50</thread>
+  <message>Return whith Exeption execution(CrudRepository.deleteById(..)) DataIntegrityViolationException</message>
+</record>
+<record>
+  <date>2022-07-04T04:19:18.636032800Z</date>
+  <millis>1656908358636</millis>
+  <nanos>32800</nanos>
+  <sequence>93</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectExeptions</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectExeptions</class>
+  <method>log</method>
+  <thread>50</thread>
+  <message>Method Invoked after throwing void com.myproject.faculte.service.EnseignantServiceImpl.deleteEnseignantById(Long)</message>
+</record>
+<record>
+  <date>2022-07-04T04:19:18.636032800Z</date>
+  <millis>1656908358636</millis>
+  <nanos>32800</nanos>
+  <sequence>94</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectExeptions</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectExeptions</class>
+  <method>log</method>
+  <thread>50</thread>
+  <message>Class Invoked after throwing class com.myproject.faculte.service.EnseignantServiceImpl</message>
+</record>
+<record>
+  <date>2022-07-04T04:19:18.636032800Z</date>
+  <millis>1656908358636</millis>
+  <nanos>32800</nanos>
+  <sequence>95</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectExeptions</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectExeptions</class>
+  <method>log</method>
+  <thread>50</thread>
+  <message>Return whith Exeption execution(EnseignantServiceImpl.deleteEnseignantById(..)) DataIntegrityViolationException</message>
+</record>
+<record>
+  <date>2022-07-04T04:19:18.637037700Z</date>
+  <millis>1656908358637</millis>
+  <nanos>37700</nanos>
+  <sequence>96</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectExeptions</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectExeptions</class>
+  <method>log</method>
+  <thread>50</thread>
+  <message>Method Invoked after throwing void com.myproject.faculte.restcontroller.EnseignantRestController.deleteEnseignant(Long)</message>
+</record>
+<record>
+  <date>2022-07-04T04:19:18.637037700Z</date>
+  <millis>1656908358637</millis>
+  <nanos>37700</nanos>
+  <sequence>97</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectExeptions</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectExeptions</class>
+  <method>log</method>
+  <thread>50</thread>
+  <message>Class Invoked after throwing class com.myproject.faculte.restcontroller.EnseignantRestController</message>
+</record>
+<record>
+  <date>2022-07-04T04:19:18.637037700Z</date>
+  <millis>1656908358637</millis>
+  <nanos>37700</nanos>
+  <sequence>98</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectExeptions</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectExeptions</class>
+  <method>log</method>
+  <thread>50</thread>
+  <message>Return whith Exeption execution(EnseignantRestController.deleteEnseignant(..)) DataIntegrityViolationException</message>
 </record>

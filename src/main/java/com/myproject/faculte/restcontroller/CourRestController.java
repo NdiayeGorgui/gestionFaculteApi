@@ -67,6 +67,7 @@ public class CourRestController {
 	 @ApiOperation(value = "Affecter un cours à une formation")
 	  
 	  @RequestMapping(value = "/Cours/addCoursToFormation", method = RequestMethod.POST)
+	 
 	  public void createCoursToFormations(@RequestBody CoursFormation coursFormation) {
 		 courService.addCoursToFormation(coursFormation.getLibelle(),coursFormation.getNomFormation());
 	  }

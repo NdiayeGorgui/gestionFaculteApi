@@ -2,62 +2,182 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2022-06-09T04:02:41.311395300Z</date>
-  <millis>1654747361311</millis>
-  <nanos>395300</nanos>
-  <sequence>55</sequence>
+  <date>2022-07-04T04:19:06.977091400Z</date>
+  <millis>1656908346977</millis>
+  <nanos>91400</nanos>
+  <sequence>67</sequence>
   <logger>com.myproject.faculte.advice.LogAspectSave</logger>
   <level>INFO</level>
   <class>com.myproject.faculte.advice.LogAspectSave</class>
   <method>log</method>
-  <thread>54</thread>
-  <message>Method Invoked before proceddind TypeCour com.myproject.faculte.restcontroller.TypeCourRestController.createTypeCours(TypeCour)</message>
+  <thread>56</thread>
+  <message>Method Invoked before proceddind void com.myproject.faculte.restcontroller.EnseignantRestController.createEnseignantWihtGroupe(Enseignant,String)</message>
 </record>
 <record>
-  <date>2022-06-09T04:02:41.312586900Z</date>
-  <millis>1654747361312</millis>
-  <nanos>586900</nanos>
-  <sequence>56</sequence>
+  <date>2022-07-04T04:19:06.977860400Z</date>
+  <millis>1656908346977</millis>
+  <nanos>860400</nanos>
+  <sequence>68</sequence>
   <logger>com.myproject.faculte.advice.LogAspectSave</logger>
   <level>INFO</level>
   <class>com.myproject.faculte.advice.LogAspectSave</class>
   <method>log</method>
-  <thread>54</thread>
-  <message>Class Invoked before proceddind class com.myproject.faculte.restcontroller.TypeCourRestController</message>
+  <thread>56</thread>
+  <message>Class Invoked before proceddind class com.myproject.faculte.restcontroller.EnseignantRestController</message>
 </record>
 <record>
-  <date>2022-06-09T04:02:41.388566100Z</date>
-  <millis>1654747361388</millis>
-  <nanos>566100</nanos>
-  <sequence>57</sequence>
+  <date>2022-07-04T04:19:07.198600600Z</date>
+  <millis>1656908347198</millis>
+  <nanos>600600</nanos>
+  <sequence>69</sequence>
   <logger>com.myproject.faculte.advice.LogAspectSave</logger>
   <level>INFO</level>
   <class>com.myproject.faculte.advice.LogAspectSave</class>
   <method>log</method>
-  <thread>54</thread>
-  <message>Method Invoked after proceddind TypeCour com.myproject.faculte.restcontroller.TypeCourRestController.createTypeCours(TypeCour)</message>
+  <thread>56</thread>
+  <message>Method Invoked after proceddind void com.myproject.faculte.restcontroller.EnseignantRestController.createEnseignantWihtGroupe(Enseignant,String)</message>
 </record>
 <record>
-  <date>2022-06-09T04:02:41.389571300Z</date>
-  <millis>1654747361389</millis>
-  <nanos>571300</nanos>
-  <sequence>58</sequence>
+  <date>2022-07-04T04:19:07.199604200Z</date>
+  <millis>1656908347199</millis>
+  <nanos>604200</nanos>
+  <sequence>70</sequence>
   <logger>com.myproject.faculte.advice.LogAspectSave</logger>
   <level>INFO</level>
   <class>com.myproject.faculte.advice.LogAspectSave</class>
   <method>log</method>
-  <thread>54</thread>
-  <message>Method Invoked after proceddind class com.myproject.faculte.restcontroller.TypeCourRestController</message>
+  <thread>56</thread>
+  <message>Method Invoked after proceddind class com.myproject.faculte.restcontroller.EnseignantRestController</message>
 </record>
 <record>
-  <date>2022-06-09T04:02:41.389571300Z</date>
-  <millis>1654747361389</millis>
-  <nanos>571300</nanos>
-  <sequence>59</sequence>
+  <date>2022-07-04T04:19:07.199604200Z</date>
+  <millis>1656908347199</millis>
+  <nanos>604200</nanos>
+  <sequence>71</sequence>
   <logger>com.myproject.faculte.advice.LogAspectSave</logger>
   <level>INFO</level>
   <class>com.myproject.faculte.advice.LogAspectSave</class>
   <method>log</method>
-  <thread>54</thread>
-  <message>execution time for the method: TypeCour com.myproject.faculte.restcontroller.TypeCourRestController.createTypeCours(TypeCour) =78 ms</message>
+  <thread>56</thread>
+  <message>execution time for the method: void com.myproject.faculte.restcontroller.EnseignantRestController.createEnseignantWihtGroupe(Enseignant,String) =222 ms</message>
+</record>
+<record>
+  <date>2022-07-04T05:28:33.130562900Z</date>
+  <millis>1656912513130</millis>
+  <nanos>562900</nanos>
+  <sequence>742</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectSave</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectSave</class>
+  <method>log</method>
+  <thread>50</thread>
+  <message>Method Invoked before proceddind void com.myproject.faculte.restcontroller.UserRestController.createUserWihtRole(User,String)</message>
+</record>
+<record>
+  <date>2022-07-04T05:28:33.131598100Z</date>
+  <millis>1656912513131</millis>
+  <nanos>598100</nanos>
+  <sequence>743</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectSave</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectSave</class>
+  <method>log</method>
+  <thread>50</thread>
+  <message>Class Invoked before proceddind class com.myproject.faculte.restcontroller.UserRestController</message>
+</record>
+<record>
+  <date>2022-07-04T05:28:33.312578300Z</date>
+  <millis>1656912513312</millis>
+  <nanos>578300</nanos>
+  <sequence>744</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectSave</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectSave</class>
+  <method>log</method>
+  <thread>50</thread>
+  <message>Method Invoked after proceddind void com.myproject.faculte.restcontroller.UserRestController.createUserWihtRole(User,String)</message>
+</record>
+<record>
+  <date>2022-07-04T05:28:33.312578300Z</date>
+  <millis>1656912513312</millis>
+  <nanos>578300</nanos>
+  <sequence>745</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectSave</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectSave</class>
+  <method>log</method>
+  <thread>50</thread>
+  <message>Method Invoked after proceddind class com.myproject.faculte.restcontroller.UserRestController</message>
+</record>
+<record>
+  <date>2022-07-04T05:28:33.312578300Z</date>
+  <millis>1656912513312</millis>
+  <nanos>578300</nanos>
+  <sequence>746</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectSave</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectSave</class>
+  <method>log</method>
+  <thread>50</thread>
+  <message>execution time for the method: void com.myproject.faculte.restcontroller.UserRestController.createUserWihtRole(User,String) =183 ms</message>
+</record>
+<record>
+  <date>2022-07-04T05:32:30.718205100Z</date>
+  <millis>1656912750718</millis>
+  <nanos>205100</nanos>
+  <sequence>1071</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectSave</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectSave</class>
+  <method>log</method>
+  <thread>48</thread>
+  <message>Method Invoked before proceddind void com.myproject.faculte.restcontroller.UserRestController.createUserWihtRole(User,String)</message>
+</record>
+<record>
+  <date>2022-07-04T05:32:30.718538500Z</date>
+  <millis>1656912750718</millis>
+  <nanos>538500</nanos>
+  <sequence>1072</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectSave</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectSave</class>
+  <method>log</method>
+  <thread>48</thread>
+  <message>Class Invoked before proceddind class com.myproject.faculte.restcontroller.UserRestController</message>
+</record>
+<record>
+  <date>2022-07-04T05:32:30.840995100Z</date>
+  <millis>1656912750840</millis>
+  <nanos>995100</nanos>
+  <sequence>1073</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectSave</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectSave</class>
+  <method>log</method>
+  <thread>48</thread>
+  <message>Method Invoked after proceddind void com.myproject.faculte.restcontroller.UserRestController.createUserWihtRole(User,String)</message>
+</record>
+<record>
+  <date>2022-07-04T05:32:30.840995100Z</date>
+  <millis>1656912750840</millis>
+  <nanos>995100</nanos>
+  <sequence>1074</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectSave</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectSave</class>
+  <method>log</method>
+  <thread>48</thread>
+  <message>Method Invoked after proceddind class com.myproject.faculte.restcontroller.UserRestController</message>
+</record>
+<record>
+  <date>2022-07-04T05:32:30.840995100Z</date>
+  <millis>1656912750840</millis>
+  <nanos>995100</nanos>
+  <sequence>1075</sequence>
+  <logger>com.myproject.faculte.advice.LogAspectSave</logger>
+  <level>INFO</level>
+  <class>com.myproject.faculte.advice.LogAspectSave</class>
+  <method>log</method>
+  <thread>48</thread>
+  <message>execution time for the method: void com.myproject.faculte.restcontroller.UserRestController.createUserWihtRole(User,String) =122 ms</message>
 </record>

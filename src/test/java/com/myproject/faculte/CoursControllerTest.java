@@ -44,7 +44,8 @@ public class CoursControllerTest {
 		// mockMvc.perform(MockMvcRequestBuilders.get("/Cours/1"))
 		mockMvc.perform(MockMvcRequestBuilders.get("/Cours/{id}", 1)).andDo(print())
 				.andExpect(MockMvcResultMatchers.jsonPath("$.libelle").value("maths"))
-				.andExpect(MockMvcResultMatchers.jsonPath("$.nbeHeure").value(25)).andExpect(status().isOk());
+				.andExpect(MockMvcResultMatchers.jsonPath("$.nbeHeure").value(25))
+				.andExpect(status().isOk());
 
 	}
 

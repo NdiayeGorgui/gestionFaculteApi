@@ -24,6 +24,7 @@ public class FaculteApplication {
 	}
 	
 	
+	
 	/*
 	 * @Bean CommandLineRunner start(UserService userService) {
 	 * 
@@ -39,6 +40,7 @@ public class FaculteApplication {
 	 * userService.addRoleToUser("toufah", "ENSEIGNANT");
 	 * userService.addRoleToUser("gogo", "ADMIN"); }; }
 	 */
+	 
 	 
 	@Bean
 	BCryptPasswordEncoder getBCE() {

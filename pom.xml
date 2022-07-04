@@ -84,8 +84,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
-        
-		
 	</dependencies>
 
 	<build>
@@ -103,6 +101,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>spring-boot-enseignement-aws</finalName>
 	</build>
 
 </project>

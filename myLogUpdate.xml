@@ -2,62 +2,62 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2022-06-09T04:02:51.658648100Z</date>
-  <millis>1654747371658</millis>
-  <nanos>648100</nanos>
-  <sequence>84</sequence>
+  <date>2022-07-04T05:32:08.834524700Z</date>
+  <millis>1656912728834</millis>
+  <nanos>524700</nanos>
+  <sequence>940</sequence>
   <logger>com.myproject.faculte.advice.LogAspectUpdate</logger>
   <level>INFO</level>
   <class>com.myproject.faculte.advice.LogAspectUpdate</class>
   <method>log</method>
-  <thread>48</thread>
-  <message>Method Invoked before proceddind TypeCour com.myproject.faculte.restcontroller.TypeCourRestController.updateTypeCours(Long,TypeCour)</message>
+  <thread>55</thread>
+  <message>Method Invoked before proceddind User com.myproject.faculte.restcontroller.UserRestController.updateUser(Long,User)</message>
 </record>
 <record>
-  <date>2022-06-09T04:02:51.659884100Z</date>
-  <millis>1654747371659</millis>
-  <nanos>884100</nanos>
-  <sequence>85</sequence>
+  <date>2022-07-04T05:32:08.837219600Z</date>
+  <millis>1656912728837</millis>
+  <nanos>219600</nanos>
+  <sequence>941</sequence>
   <logger>com.myproject.faculte.advice.LogAspectUpdate</logger>
   <level>INFO</level>
   <class>com.myproject.faculte.advice.LogAspectUpdate</class>
   <method>log</method>
-  <thread>48</thread>
-  <message>Class Invoked before proceddind class com.myproject.faculte.restcontroller.TypeCourRestController</message>
+  <thread>55</thread>
+  <message>Class Invoked before proceddind class com.myproject.faculte.restcontroller.UserRestController</message>
 </record>
 <record>
-  <date>2022-06-09T04:02:51.695129400Z</date>
-  <millis>1654747371695</millis>
-  <nanos>129400</nanos>
-  <sequence>92</sequence>
+  <date>2022-07-04T05:32:08.986678700Z</date>
+  <millis>1656912728986</millis>
+  <nanos>678700</nanos>
+  <sequence>948</sequence>
   <logger>com.myproject.faculte.advice.LogAspectUpdate</logger>
   <level>INFO</level>
   <class>com.myproject.faculte.advice.LogAspectUpdate</class>
   <method>log</method>
-  <thread>48</thread>
-  <message>Method Invoked after proceddind TypeCour com.myproject.faculte.restcontroller.TypeCourRestController.updateTypeCours(Long,TypeCour)</message>
+  <thread>55</thread>
+  <message>Method Invoked after proceddind User com.myproject.faculte.restcontroller.UserRestController.updateUser(Long,User)</message>
 </record>
 <record>
-  <date>2022-06-09T04:02:51.696213400Z</date>
-  <millis>1654747371696</millis>
-  <nanos>213400</nanos>
-  <sequence>93</sequence>
+  <date>2022-07-04T05:32:08.986678700Z</date>
+  <millis>1656912728986</millis>
+  <nanos>678700</nanos>
+  <sequence>949</sequence>
   <logger>com.myproject.faculte.advice.LogAspectUpdate</logger>
   <level>INFO</level>
   <class>com.myproject.faculte.advice.LogAspectUpdate</class>
   <method>log</method>
-  <thread>48</thread>
-  <message>Method Invoked after proceddind class com.myproject.faculte.restcontroller.TypeCourRestController</message>
+  <thread>55</thread>
+  <message>Method Invoked after proceddind class com.myproject.faculte.restcontroller.UserRestController</message>
 </record>
 <record>
-  <date>2022-06-09T04:02:51.696213400Z</date>
-  <millis>1654747371696</millis>
-  <nanos>213400</nanos>
-  <sequence>94</sequence>
+  <date>2022-07-04T05:32:08.987680Z</date>
+  <millis>1656912728987</millis>
+  <nanos>680000</nanos>
+  <sequence>950</sequence>
   <logger>com.myproject.faculte.advice.LogAspectUpdate</logger>
   <level>INFO</level>
   <class>com.myproject.faculte.advice.LogAspectUpdate</class>
   <method>log</method>
-  <thread>48</thread>
-  <message>execution time for the method: TypeCour com.myproject.faculte.restcontroller.TypeCourRestController.updateTypeCours(Long,TypeCour) =38 ms</message>
+  <thread>55</thread>
+  <message>execution time for the method: User com.myproject.faculte.restcontroller.UserRestController.updateUser(Long,User) =153 ms</message>
 </record>
